@@ -4,7 +4,7 @@
  */
 
 import React, { useState } from 'react';
-import { Share2, Instagram, Mail, Phone, ExternalLink } from 'lucide-react';
+import { Share2, Instagram, Mail, Phone, MapPin } from 'lucide-react';
 
 export function Footer() {
   const [copied, setCopied] = useState(false);
@@ -117,6 +117,12 @@ export function Footer() {
                 >
                   +1 (234) 567-890
                 </a>
+              </li>
+              <li className="flex items-start gap-2">
+                <MapPin className="h-4 w-4 text-soft-sage shrink-0 mt-0.5" />
+                <p className="font-sans text-on-surface-variant leading-relaxed text-xs">
+                  (C – 124, Anand Niketan, South Motibagh), New Delhi - 110021
+                </p>
               </li>
               <li className="pt-2 flex items-center gap-3 relative">
                 <button

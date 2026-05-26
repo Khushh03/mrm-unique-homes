@@ -61,6 +61,13 @@ export function ConnectedLiving() {
             Situated in a prime locale, MRM Unique Homes offers seamless access to the city's finest hubs while maintaining its peaceful, sanctuary-like atmosphere.
           </p>
 
+          <div className="inline-flex items-center gap-3 rounded-3xl border border-gray-200 bg-white/80 px-4 py-3 shadow-sm">
+            <MapPin className="h-4 w-4 text-primary" />
+            <p className="font-sans text-sm text-on-surface leading-relaxed">
+              (C – 124, Anand Niketan, South Motibagh), New Delhi - 110021
+            </p>
+          </div>
+
           {/* Quick List Blocks */}
           <div className="space-y-4">
             {[

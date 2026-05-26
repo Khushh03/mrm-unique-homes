@@ -10,6 +10,7 @@ import { Stats } from './components/Stats';
 import { Amenities } from './components/Amenities';
 import { Residences } from './components/Residences';
 import { ConnectedLiving } from './components/ConnectedLiving';
+import { Testimonials } from './components/Testimonials';
 import { VisualJournal } from './components/VisualJournal';
 import { FaqSection } from './components/FaqSection';
 import { LeadCapture } from './components/LeadCapture';
@@ -67,6 +68,9 @@ export default function App() {
 
             {/* Residences Tier Presentation & Spec Sheet Section */}
             <Residences onOpenBookingWithId={handleOpenBookingWithId} />
+
+            {/* Google Reviews & Testimonials Section */}
+            <Testimonials />
 
             {/* connected-living Interactive Local Minimap Section */}
             <ConnectedLiving />
