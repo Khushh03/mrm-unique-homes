@@ -7,118 +7,185 @@ import { Residence, Amenity, Landmark, GalleryItem, FAQ } from './types';
 
 export const RESIDENCES_DATA: Residence[] = [
   {
-    id: 'solo',
-    name: 'The Solo',
-    tagline: 'A private sanctuary designed for singular focus and profound rest.',
-    description: 'Intentionally curated for solopreneurs, writers, or individuals who value unmatched focus. Soft indirect lighting and integrated task-spaces optimize flow.',
+    id: 'four-sharing-no-washroom',
+    name: '4 Sharing (Without attached washroom)',
+    tagline: 'Value-oriented shared living with well-appointed beds and communal washroom access.',
+    description: 'A practical four-bed residence designed for flexible occupants who appreciate a comfortable, community-first layout without attached bathrooms.',
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA-omA2jZNUoz1WjcT4QABww1HKc7OhQDXYPPlZfE6T1SWVTEf-pINU0drymnhuMnUn0hUT4p6-zsdbF0pDxteetHSZL1RoXT85Eo8cH3Su9Fl-JEy6nxSFRB8xVB_Wxz_K0THXJXstaqrQGBbJzH0ZK7t3YovybmLYLEJ0Inh1nUQSXGSsJsb_x075FuzI0b8XfuoWtKF9lU9SXzdjQ1bsseNo81Nf42VTk6NUDwBFIejIcPAiVYAg35NpKuHqFuFKrvc9hbqxzutA',
-    specs: ['En-suite bathroom', 'Dedicated workspace'],
+    specs: ['Shared bathroom access', 'Private sleeping nook', 'Compact study area'],
     features: [
-      'Bespoke workspace desk with ergonomic integrated lighting',
-      'Under-bed smart integrated storage panel system',
-      'Acoustic insulation panels within all shared walls',
-      'Zero-noise continuous eco-air circulation system'
-    ],
-    sizeSqFt: 380,
-    availableFrom: 'Immediate',
-    pricePerMonth: '$2,800'
-  },
-  {
-    id: 'dual',
-    name: 'The Dual',
-    tagline: 'Spacious, shared living that honors individual privacy and shared connection.',
-    description: 'Perfect for companions, partners, or corporate peers. Double master beds positioned symmetrically around a central acoustic divider, leading into premium shared lounges.',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAKyTbj7nM_L1a97IGvcRmF1-KUgwQSqQUjDCXR3v5-AAWFvHmsSWt2F7tOt-xZM_uKhKe7R3xOPaLp9us1VTp-ODyBkQuRE2XH385jKtIOxjahPqMIwgpZGyAgqyAEvOi6wrK8t_-QAxxd2urJvqKTjZwtcUYOP5EXkk9XCMqYd1YGbyCNHADUMssgwjRvD1tYJ3-6V4JlhQS4ZVfD3KtUbAdKSO0DgNCw5arAFMHmJgacpV0Aiv1txoxAbrB5ZRTmGeGLdP_HH0-O',
-    specs: ['Generous closet space', 'Dual vanities', 'Lounge area'],
-    features: [
-      'Symmetric layouts with individual high-privacy sleeping alcoves',
-      'Deep dual oak vanities with backlit custom designer mirrors',
-      'Walk-in floor-to-ceiling boutique wardrobe panels',
-      'Panoramic reading lounge with dual-tilt floor-to-ceiling glazing'
+      'Four private bed stations with personal under-bed storage',
+      'Open-plan communal meeting and lounge area',
+      'High-efficiency climate control with acoustic zoning',
+      'Integrated keyless entry for each resident'
     ],
     sizeSqFt: 620,
-    availableFrom: 'June 2026',
-    pricePerMonth: '$4,500'
+    availableFrom: 'Immediate',
+    pricePerMonth: '₹20,000'
   },
   {
-    id: 'collective',
-    name: 'The Collective',
-    tagline: 'An expansive suite designed for collaborative living without compromise.',
-    description: 'Bringing together collective intelligence and personal quietude. Generous common areas pair with completely private bedrooms, maintaining an elegant, premium look.',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBSZYDFwDMwJY1Pu5XJFyIv09F2xwRzEob60HcyMoszyffAX1I4RzzymYuPi9M0ejlJV0AbMcWWoIySYxCbihTxxmDkrkZvbJCkIEeOqQootQAVy5Ohqp_H1v4VLpvqpt26he0yI2CC2wysTBlIEVYlVmG2QmvZxsqRwX7aaTJJwDcyTyOcT3sVwf4SuYobrBgSfpptMGouPPNLxJAtCknSJu3RvwLPdmfR0XtTIchO8aGvlnc-OZ2KqrYZpakIPDKJiNSeBTNcULXE',
-    specs: ['Expansive living area', 'Kitchenette'],
+    id: 'three-sharing-attached',
+    name: '3 Sharing with attached washroom',
+    tagline: 'Triple occupancy comfort with private ensuite access for each bed.',
+    description: 'Three-bed suites offer a premium shared residence experience, with individual attached washrooms and thoughtful privacy details throughout.',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAKyTbj7nM_L1a97IGvcRmF1-KUgwQSqQUjDCXR3v5-AAWFvHmsSWt2F7tOt-xZM_uKhKe7R3xOPaLp9us1VTp-ODyBkQuRE2XH385jKtIOxjahPqMIwgpZGyAgqyAEvOi6wrK8t_-QAxxd2urJvqKTjZwtcUYOP5EXkk9XCMqYd1YGbyCNHADUMssgwjRvD1tYJ3-6V4JlhQS4ZVfD3KtUbAdKSO0DgNCw5arAFMHmJgacpV0Aiv1txoxAbrB5ZRTmGeGLdP_HH0-O',
+    specs: ['Individual attached washroom', 'Shared lounge', 'Dedicated closet space'],
     features: [
-      'Fully functional kitchen with high-end Gaggenau appliances',
-      'Double en-suite bathrooms featuring hand-picked Italian marble',
-      'Modular sensory workstation configures dynamically for three',
-      'Curated local slate stone features and continuous plant columns'
+      'Three private bedrooms with direct ensuite access',
+      'Spacious shared kitchen and seating area',
+      'Personal wardrobe zones with ambient lighting',
+      'Enhanced privacy screening between sleeping areas'
     ],
-    sizeSqFt: 950,
+    sizeSqFt: 780,
+    availableFrom: 'July 2026',
+    pricePerMonth: '₹22,000'
+  },
+  {
+    id: 'two-sharing-attached',
+    name: '2 Sharing with attached washroom',
+    tagline: 'Semi-private duo residence with premium ensuite convenience.',
+    description: 'Two-bed shared suites that pair private sleeping quarters with attached bathrooms, ideal for friends or colleagues seeking quiet comfort.',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBSZYDFwDMwJY1Pu5XJFyIv09F2xwRzEob60HcyMoszyffAX1I4RzzymYuPi9M0ejlJV0AbMcWWoIySYxCbihTxxmDkrkZvbJCkIEeOqQootQAVy5Ohqp_H1v4VLpvqpt26he0yI2CC2wysTBlIEVYlVmG2QmvZxsqRwX7aaTJJwDcyTyOcT3sVwf4SuYobrBgSfpptMGouPPNLxJAtCknSJu3RvwLPdmfR0XtTIchO8aGvlnc-OZ2KqrYZpakIPDKJiNSeBTNcULXE',
+    specs: ['Attached washroom', 'Shared mini lounge', 'Personal storage'],
+    features: [
+      'Two private sleep alcoves each with ensuite bath',
+      'Shared kitchenette and dining nook',
+      'Acoustic privacy partitioning',
+      'Soft ambient lighting throughout'
+    ],
+    sizeSqFt: 680,
     availableFrom: 'August 2026',
-    pricePerMonth: '$6,200'
+    pricePerMonth: '₹27,000'
+  },
+  {
+    id: 'two-sharing-no-washroom',
+    name: '2 Sharing (Without attached washroom)',
+    tagline: 'Balanced twin sharing with thoughtful layout and shared facilities.',
+    description: 'A cost-effective two-bed residence with shared washroom facilities, designed for clear circulation and comfortable dual occupancy.',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDPrb4x2ksEnDNt4cR7ciKm-iqqEMNbd8b42hnujmBIQfn1oQnWjKsJX9eb3HMcbKxz8ojixaxkZzeN7_rpUWk4DuKxx0JXCZEsDW79FKdG3CJF7BzHczL75KQqGvHSidYFvygVmnFE3ESCuRsJlNmOeZxWY805N_M5Z84NavTfEfJzsOXdSvwJyCC0uabEBFtyxPJUC3-6iMbeYQLTMM-2w20hj5GgpPuDBST7cMdpZYi8h17eYuRw2DQcx7AYzf94Vg28mdBt3y6d',
+    specs: ['Shared bathroom access', 'Dual workspace zones', 'Large wardrobe'],
+    features: [
+      'Two private bed spaces with built-in storage',
+      'Shared bathroom with premium fixtures',
+      'Flexible shared lounge and study area',
+      'High-performance ventilation and cooling'
+    ],
+    sizeSqFt: 560,
+    availableFrom: 'Immediate',
+    pricePerMonth: '₹18,000'
   }
 ];
 
 export const AMENITIES_DATA: Amenity[] = [
   {
-    id: 'dining',
-    name: 'Artisan Dining',
-    description: 'A curated culinary space featuring locally sourced ingredients and bespoke menus.',
-    iconName: 'Utensils',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCSjahhPK7GGoYfa8TgoFvnDWvE3mFk_XSs6vsn1BFxVxGuZD_9GE3bWj__4Iv6Pm7dzxN7-d8qFKGmxERGPm7HKMJmH9pps9vgi-GbaNorfsYDgerYVFbFTHM19gMfJqFuZnq31p83CUkCcrDTIBsVx8Uw7BhMCSIqIAmrO5h8ITVf-_M5TaXPt1_n2CQmVDTRvew8NRRHlfhItGQmIKZfRNKnGWn7mtXOhlyPyNroSEbZrLn9QIM4KyD2be5k5-LiFj4RCPo9VYbe',
-    detailText: 'Collaborating directly with organic farms, our culinary directors curate seasonal tasting plates and organic daily provisions tailored to your dietary metrics.',
-    capacityLimit: '24 Guests max / Reservation required',
-    operatingHours: '07:00 AM – 11:00 PM Daily'
-  },
-  {
-    id: 'studio',
-    name: 'Wellness Studio',
-    description: 'State-of-the-art equipment in a serene, light-filled environment designed for holistic health.',
-    iconName: 'Dumbbell',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC6bPZ5JBuCD53OV8Zfb5Z0qC3FqP9piajiIUnuK5t5lxLmvzm5nLL4NGzbPaZzycoYekwVe8zYF2gsRUN9UvARAsSW2klS3PudUilFCzbQAYEdYOnCQfULHgkOZURJfTYgnUbM8ErdBsmnYAxQfh0fNB6OT1hjTHz1L2MtmmurpKMyGu-9bKVnKfdAKc4sgs5pxAs5Tb7KU_L6N5w_IyRobtK-IUKpvrqT3_rS83sdzgxqfdJ3XkDMNURx10Jva3bSCOWWldHVIrYD',
-    detailText: 'Features integrated resistance machines, premium free weights, custom oak-lined Pilates reformers, and a private floor for meditation and restorative posture training.',
-    capacityLimit: '12 Guests max / Walk-ins allowed',
-    operatingHours: '24/7 Access with electronic badge'
-  },
-  {
-    id: 'library',
-    name: 'The Library',
-    description: 'A quiet sanctuary housing a curated collection of architecture and design literature.',
-    iconName: 'BookOpen',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDPrb4x2ksEnDNt4cR7ciKm-iqqEMNbd8b42hnujmBIQfn1oQnWjKsJX9eb3HMcbKxz8ojixaxkZzeN7_rpUWk4DuKxx0JXCZEsDW79FKdG3CJF7BzHczL75KQqGvHSidYFvygVmnFE3ESCuRsJlNmOeZxWY805N_M5Z84NavTfEfJzsOXdSvwJyCC0uabEBFtyxPJUC3-6iMbeYQLTMM-2w20hj5GgpPuDBST7cMdpZYi8h17eYuRw2DQcx7AYzf94Vg28mdBt3y6d',
-    detailText: 'Wood-paneled, acoustically isolated study hall with a collection of classic philosophy, custom design prints, art monographs, and high-contrast ambient task reading spots.',
-    capacityLimit: '8 Guests max / Quiet workspace',
-    operatingHours: '06:00 AM – Midnight Daily'
-  },
-  {
-    id: 'spa',
-    name: 'Tranquility Spa',
-    description: 'Bespoke treatments in a minimalist setting focused on restoration and peace.',
+    id: 'ac-rooms',
+    name: 'AC-Equipped Rooms',
+    description: 'Individual air conditioning in every room for year-round comfort.',
     iconName: 'Flower',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC6bPZ5JBuCD53OV8Zfb5Z0qC3FqP9piajiIUnuK5t5lxLmvzm5nLL4NGzbPaZzycoYekwVe8zYF2gsRUN9UvARAsSW2klS3PudUilFCzbQAYEdYOnCQfULHgkOZURJfTYgnUbM8ErdBsmnYAxQfh0fNB6OT1hjTHz1L2MtmmurpKMyGu-9bKVnKfdAKc4sgs5pxAs5Tb7KU_L6N5w_IyRobtK-IUKpvrqT3_rS83sdzgxqfdJ3XkDMNURx10Jva3bSCOWWldHVIrYD',
-    detailText: 'A dedicated steam sauna, infrared cold plunge panels, and custom-ordered aromacology tables designed to realign physical and cognitive restoration after heavy travel or work.',
-    capacityLimit: '4 Guests max / Private appointment',
-    operatingHours: '09:00 AM – 09:00 PM Daily'
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA-omA2jZNUoz1WjcT4QABww1HKc7OhQDXYPPlZfE6T1SWVTEf-pINU0drymnhuMnUn0hUT4p6-zsdbF0pDxteetHSZL1RoXT85Eo8cH3Su9Fl-JEy6nxSFRB8xVB_Wxz_K0THXJXstaqrQGBbJzH0ZK7t3YovybmLYLEJ0Inh1nUQSXGSsJsb_x075FuzI0b8XfuoWtKF9lU9SXzdjQ1bsseNo81Nf42VTk6NUDwBFIejIcPAiVYAg35NpKuHqFuFKrvc9hbqxzutA',
+    detailText: 'Individual air conditioning in every room for year-round comfort.',
+    capacityLimit: 'All rooms equipped',
+    operatingHours: '24/7 Available'
   },
   {
-    id: 'lounge',
-    name: 'The Lounge',
-    description: 'An expansive common area for socializing and relaxation.',
+    id: 'power-backup',
+    name: '24/7 Power Backup',
+    description: 'Uninterrupted electricity with full generator backup at all times.',
+    iconName: 'Coffee',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC6bPZ5JBuCD53OV8Zfb5Z0qC3FqP9piajiIUnuK5t5lxLmvzm5nLL4NGzbPaZzycoYekwVe8zYF2gsRUN9UvARAsSW2klS3PudUilFCzbQAYEdYOnCQfULHgkOZURJfTYgnUbM8ErdBsmnYAxQfh0fNB6OT1hjTHz1L2MtmmurpKMyGu-9bKVnKfdAKc4sgs5pxAs5Tb7KU_L6N5w_IyRobtK-IUKpvrqT3_rS83sdzgxqfdJ3XkDMNURx10Jva3bSCOWWldHVIrYD',
+    detailText: 'Uninterrupted electricity with full generator backup at all times.',
+    capacityLimit: 'Entire property',
+    operatingHours: '24/7 Backup System'
+  },
+  {
+    id: 'campus-shuttle',
+    name: 'Free Campus Shuttle',
+    description: 'Complimentary drop and pick-up service to college every day.',
     iconName: 'Coffee',
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDPrb4x2ksEnDNt4cR7ciKm-iqqEMNbd8b42hnujmBIQfn1oQnWjKsJX9eb3HMcbKxz8ojixaxkZzeN7_rpUWk4DuKxx0JXCZEsDW79FKdG3CJF7BzHczL75KQqGvHSidYFvygVmnFE3ESCuRsJlNmOeZxWY805N_M5Z84NavTfEfJzsOXdSvwJyCC0uabEBFtyxPJUC3-6iMbeYQLTMM-2w20hj5GgpPuDBST7cMdpZYi8h17eYuRw2DQcx7AYzf94Vg28mdBt3y6d',
-    detailText: 'The architectural heart of the property featuring linear sandstones, minimalist open fireplace pits, and a complimentary artisanal coffee/tea service counter.',
-    capacityLimit: '40 Guests max / Multi-purpose area',
-    operatingHours: '06:00 AM – 11:00 PM Daily'
+    detailText: 'Complimentary drop and pick-up service to college every day.',
+    capacityLimit: 'All residents',
+    operatingHours: 'Daily scheduled service'
   },
   {
-    id: 'work',
-    name: 'Co-working Hub',
-    description: 'Dedicated spaces designed for focus and collaboration.',
-    iconName: 'Laptop',
+    id: 'cctv-security',
+    name: 'CCTV & 24/7 Security',
+    description: '360° surveillance with trained security personnel round the clock.',
+    iconName: 'BookOpen',
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA-omA2jZNUoz1WjcT4QABww1HKc7OhQDXYPPlZfE6T1SWVTEf-pINU0drymnhuMnUn0hUT4p6-zsdbF0pDxteetHSZL1RoXT85Eo8cH3Su9Fl-JEy6nxSFRB8xVB_Wxz_K0THXJXstaqrQGBbJzH0ZK7t3YovybmLYLEJ0Inh1nUQSXGSsJsb_x075FuzI0b8XfuoWtKF9lU9SXzdjQ1bsseNo81Nf42VTk6NUDwBFIejIcPAiVYAg35NpKuHqFuFKrvc9hbqxzutA',
-    detailText: 'Equipped with redundant solid-state high-speed connections, isolated call pods, dynamic height-adjustable workbenches, and professional local screen casting panels.',
-    capacityLimit: '15 Stations / Open layout',
-    operatingHours: '24/7 Access with electronic badge'
+    detailText: '360° surveillance with trained security personnel round the clock. Enhanced safety features for residents.',
+    capacityLimit: 'Full property coverage',
+    operatingHours: '24/7 Monitored'
+  },
+  {
+    id: 'warm-care',
+    name: 'Motherly Care & Support',
+    description: 'Warm personal attention from our owner — you\'re family here.',
+    iconName: 'Coffee',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDPrb4x2ksEnDNt4cR7ciKm-iqqEMNbd8b42hnujmBIQfn1oQnWjKsJX9eb3HMcbKxz8ojixaxkZzeN7_rpUWk4DuKxx0JXCZEsDW79FKdG3CJF7BzHczL75KQqGvHSidYFvygVmnFE3ESCuRsJlNmOeZxWY805N_M5Z84NavTfEfJzsOXdSvwJyCC0uabEBFtyxPJUC3-6iMbeYQLTMM-2w20hj5GgpPuDBST7cMdpZYi8h17eYuRw2DQcx7AYzf94Vg28mdBt3y6d',
+    detailText: 'Warm personal attention from our owner — you\'re family here. Personalized support and guidance available.',
+    capacityLimit: 'All residents',
+    operatingHours: '24/7 Available'
+  },
+  {
+    id: 'hot-water',
+    name: 'Geyser & Hot Water',
+    description: 'Instant hot water available at all hours, every single day.',
+    iconName: 'Flower',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC6bPZ5JBuCD53OV8Zfb5Z0qC3FqP9piajiIUnuK5t5lxLmvzm5nLL4NGzbPaZzycoYekwVe8zYF2gsRUN9UvARAsSW2klS3PudUilFCzbQAYEdYOnCQfULHgkOZURJfTYgnUbM8ErdBsmnYAxQfh0fNB6OT1hjTHz1L2MtmmurpKMyGu-9bKVnKfdAKc4sgs5pxAs5Tb7KU_L6N5w_IyRobtK-IUKpvrqT3_rS83sdzgxqfdJ3XkDMNURx10Jva3bSCOWWldHVIrYD',
+    detailText: 'Instant hot water available at all hours, every single day.',
+    capacityLimit: 'All bathrooms',
+    operatingHours: '24/7 Available'
+  },
+  {
+    id: 'home-meals',
+    name: 'Home-Style Meals',
+    description: 'Freshly prepared, hygienic and nutritious meals daily.',
+    iconName: 'Utensils',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCSjahhPK7GGoYfa8TgoFvnDWvE3mFk_XSs6vsn1BFxVxGuZD_9GE3bWj__4Iv6Pm7dzxN7-d8qFKGmxERGPm7HKMJmH9pps9vgi-GbaNorfsYDgerYVFbFTHM19gMfJqFuZnq31p83CUkCcrDTIBsVx8Uw7BhMCSIqIAmrO5h8ITVf-_M5TaXPt1_n2CQmVDTRvew8NRRHlfhItGQmIKZfRNKnGWn7mtXOhlyPyNroSEbZrLn9QIM4KyD2be5k5-LiFj4RCPo9VYbe',
+    detailText: 'Freshly prepared, hygienic and nutritious meals daily prepared with care.',
+    capacityLimit: 'All residents',
+    operatingHours: 'Daily meal service'
+  },
+  {
+    id: 'laundry',
+    name: 'Washing Machine Facility',
+    description: 'Shared laundry facility available to all residents at no extra cost.',
+    iconName: 'Coffee',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDPrb4x2ksEnDNt4cR7ciKm-iqqEMNbd8b42hnujmBIQfn1oQnWjKsJX9eb3HMcbKxz8ojixaxkZzeN7_rpUWk4DuKxx0JXCZEsDW79FKdG3CJF7BzHczL75KQqGvHSidYFvygVmnFE3ESCuRsJlNmOeZxWY805N_M5Z84NavTfEfJzsOXdSvwJyCC0uabEBFtyxPJUC3-6iMbeYQLTMM-2w20hj5GgpPuDBST7cMdpZYi8h17eYuRw2DQcx7AYzf94Vg28mdBt3y6d',
+    detailText: 'Shared laundry facility available to all residents at no extra cost.',
+    capacityLimit: 'Multiple machines',
+    operatingHours: '24/7 Access'
+  },
+  {
+    id: 'tv-lounge',
+    name: 'Smart TV Lounge',
+    description: 'Relax and unwind with premium entertainment in the shared lounge.',
+    iconName: 'Coffee',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDPrb4x2ksEnDNt4cR7ciKm-iqqEMNbd8b42hnujmBIQfn1oQnWjKsJX9eb3HMcbKxz8ojixaxkZzeN7_rpUWk4DuKxx0JXCZEsDW79FKdG3CJF7BzHczL75KQqGvHSidYFvygVmnFE3ESCuRsJlNmOeZxWY805N_M5Z84NavTfEfJzsOXdSvwJyCC0uabEBFtyxPJUC3-6iMbeYQLTMM-2w20hj5GgpPuDBST7cMdpZYi8h17eYuRw2DQcx7AYzf94Vg28mdBt3y6d',
+    detailText: 'Relax and unwind with premium smart TV in the shared lounge.',
+    capacityLimit: 'Common area',
+    operatingHours: 'Daily evening hours'
+  },
+  {
+    id: 'ncr-transport',
+    name: 'NCR Transport Options',
+    description: 'Convenient transport options available across the NCR region.',
+    iconName: 'Coffee',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA-omA2jZNUoz1WjcT4QABww1HKc7OhQDXYPPlZfE6T1SWVTEf-pINU0drymnhuMnUn0hUT4p6-zsdbF0pDxteetHSZL1RoXT85Eo8cH3Su9Fl-JEy6nxSFRB8xVB_Wxz_K0THXJXstaqrQGBbJzH0ZK7t3YovybmLYLEJ0Inh1nUQSXGSsJsb_x075FuzI0b8XfuoWtKF9lU9SXzdjQ1bsseNo81Nf42VTk6NUDwBFIejIcPAiVYAg35NpKuHqFuFKrvc9hbqxzutA',
+    detailText: 'Convenient transport options available across the NCR region.',
+    capacityLimit: 'All residents',
+    operatingHours: 'On-demand service'
+  },
+  {
+    id: 'study-space',
+    name: 'Student-Friendly Study Space',
+    description: 'Peaceful atmosphere designed for focused study and academic growth.',
+    iconName: 'BookOpen',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDPrb4x2ksEnDNt4cR7ciKm-iqqEMNbd8b42hnujmBIQfn1oQnWjKsJX9eb3HMcbKxz8ojixaxkZzeN7_rpUWk4DuKxx0JXCZEsDW79FKdG3CJF7BzHczL75KQqGvHSidYFvygVmnFE3ESCuRsJlNmOeZxWY805N_M5Z84NavTfEfJzsOXdSvwJyCC0uabEBFtyxPJUC3-6iMbeYQLTMM-2w20hj5GgpPuDBST7cMdpZYi8h17eYuRw2DQcx7AYzf94Vg28mdBt3y6d',
+    detailText: 'Peaceful atmosphere designed for focused study and academic growth.',
+    capacityLimit: 'Multiple study zones',
+    operatingHours: '24/7 Access'
   }
 ];
 

@@ -123,7 +123,7 @@ export function BookingModal({ isOpen, onClose, initialResidenceId }: BookingMod
                               }`}
                             >
                               <span className="font-sans text-xs font-semibold">{r.name}</span>
-                              <span className="font-sans text-[10px] text-gray-400 mt-0.5 font-medium">{r.pricePerMonth}</span>
+                              <span className="font-sans text-[10px] text-gray-400 mt-0.5 font-medium">{r.pricePerMonth} per Bed</span>
                             </button>
                           ))}
                         </div>

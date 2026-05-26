@@ -4,8 +4,9 @@
  */
 
 import { useState, useEffect } from 'react';
-import { Menu, X, Landmark } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import logo from '../assets/logo.svg';
 
 interface NavbarProps {
   onOpenBooking: () => void;
@@ -71,13 +72,15 @@ export function Navbar({ onOpenBooking }: NavbarProps) {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-20 flex justify-between items-center">
-        {/* Brand Name */}
+        {/* Brand Logo */}
         <button
           id="nav-logo"
           onClick={() => scrollToSection('home')}
-          className="font-serif text-xl md:text-2xl font-bold tracking-tight text-primary italic cursor-pointer outline-none hover:opacity-90 transition-opacity"
+          type="button"
+          className="flex items-center gap-3 cursor-pointer outline-none hover:opacity-90 transition-opacity"
         >
-          MRM Unique Homes
+          <img src={logo} alt="MRM Unique Homes" className="h-12 w-auto object-contain" />
+          <span className="sr-only">MRM Unique Homes</span>
         </button>
 
         {/* Desktop Links */}

@@ -3,8 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState } from 'react';
-import { motion } from 'motion/react';
+import { useEffect, useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { Stats } from './components/Stats';
@@ -20,6 +19,18 @@ import { BookingModal } from './components/BookingModal';
 export default function App() {
   const [bookingOpen, setBookingOpen] = useState(false);
   const [selectedResidenceId, setSelectedResidenceId] = useState<string | undefined>(undefined);
+  const [currentPage, setCurrentPage] = useState<'home' | 'amenities'>(() =>
+    window.location.hash === '#amenities-page' ? 'amenities' : 'home'
+  );
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      setCurrentPage(window.location.hash === '#amenities-page' ? 'amenities' : 'home');
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
 
   const handleOpenBooking = () => {
     setSelectedResidenceId(undefined);
@@ -43,29 +54,35 @@ export default function App() {
 
       {/* Master Content Stage Wrapper */}
       <main className="flex-1">
-        {/* Hero Slideshow Section */}
-        <Hero />
+        {currentPage === 'home' ? (
+          <>
+            {/* Hero Slideshow Section */}
+            <Hero />
 
-        {/* Dynamic Numerical Stat Bar */}
-        <Stats />
+            {/* Dynamic Numerical Stat Bar */}
+            <Stats />
 
-        {/* Curated Social & Private Amenities Section */}
-        <Amenities />
+            {/* Curated Social & Private Amenities Section */}
+            <Amenities maxItems={6} showMore showMoreHash="#amenities-page" />
 
-        {/* Residences Tier Presentation & Spec Sheet Section */}
-        <Residences onOpenBookingWithId={handleOpenBookingWithId} />
+            {/* Residences Tier Presentation & Spec Sheet Section */}
+            <Residences onOpenBookingWithId={handleOpenBookingWithId} />
 
-        {/* connected-living Interactive Local Minimap Section */}
-        <ConnectedLiving />
+            {/* connected-living Interactive Local Minimap Section */}
+            <ConnectedLiving />
 
-        {/* Live Instagram Stream/Replies Light-box Section  */}
-        <VisualJournal />
+            {/* Live Instagram Stream/Replies Light-box Section  */}
+            <VisualJournal />
 
-        {/* FAQ Inquiries Accordion Section */}
-        <FaqSection />
+            {/* FAQ Inquiries Accordion Section */}
+            <FaqSection />
 
-        {/* Bottom Lead-Capture callback Section */}
-        <LeadCapture />
+            {/* Bottom Lead-Capture callback Section */}
+            <LeadCapture />
+          </>
+        ) : (
+          <Amenities showBackHome />
+        )}
       </main>
 
       {/* Structured Agency Footer */}

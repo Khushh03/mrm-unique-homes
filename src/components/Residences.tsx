@@ -49,7 +49,7 @@ export function Residences({ onOpenBookingWithId }: ResidencesProps) {
       </div>
 
       {/* Grid of 3 options */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch pt-4">
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 items-stretch pt-4">
         {RESIDENCES_DATA.map((res) => {
           const isDual = res.id === 'dual'; // Symmetric premium card
           return (
@@ -170,7 +170,7 @@ export function Residences({ onOpenBookingWithId }: ResidencesProps) {
                       {selectedResidence.name}
                     </h3>
                     <p className="font-serif text-2xl font-bold text-primary">
-                      {selectedResidence.pricePerMonth} <span className="font-sans text-xs text-on-surface-variant">/mo</span>
+                      {selectedResidence.pricePerMonth} <span className="font-sans text-xs text-on-surface-variant">/Bed</span>
                     </p>
                   </div>
 

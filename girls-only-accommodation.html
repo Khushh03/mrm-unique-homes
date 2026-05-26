@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MRM Unique Homes – Girls-Only Accommodation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: #f7f6f4;
+    min-height: 100vh;
+    padding: 80px 24px;
+    color: #1a1a1a;
+  }
+
+  .section {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  /* ── Header ── */
+  .section-header {
+    text-align: center;
+    margin-bottom: 72px;
+    opacity: 0;
+    animation: fadeUp 0.6s ease 0.05s forwards;
+  }
+
+  .eyebrow {
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 16px;
+  }
+
+  .heading {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(28px, 3.5vw, 42px);
+    font-weight: 500;
+    color: #1a1a1a;
+    line-height: 1.2;
+    margin-bottom: 18px;
+  }
+
+  .subheading {
+    font-size: 14px;
+    font-weight: 300;
+    color: #777;
+    line-height: 1.8;
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  /* ── Grid ── */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid #e5e3df;
+    border-left: 1px solid #e5e3df;
+    margin-bottom: 64px;
+  }
+
+  .feature-card {
+    border-right: 1px solid #e5e3df;
+    border-bottom: 1px solid #e5e3df;
+    padding: 44px 36px 40px;
+    text-align: center;
+    background: #f7f6f4;
+    transition: background 0.3s ease;
+    opacity: 0;
+    animation: fadeUp 0.55s ease forwards;
+    cursor: default;
+  }
+
+  .feature-card:hover {
+    background: #fff;
+  }
+
+  .feature-card:hover .icon-circle {
+    border-color: #1a1a1a;
+  }
+
+  .icon-circle {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 1px solid #d8d5d0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    transition: border-color 0.3s ease;
+    background: transparent;
+  }
+
+  .icon-circle svg {
+    width: 22px;
+    height: 22px;
+    stroke: #1a1a1a;
+    fill: none;
+    stroke-width: 1.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .feature-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: #1a1a1a;
+    letter-spacing: 0.01em;
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  .feature-desc {
+    font-size: 13px;
+    font-weight: 300;
+    color: #888;
+    line-height: 1.75;
+    max-width: 220px;
+    margin: 0 auto 20px;
+  }
+
+  .learn-more {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #aaa;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.25s ease;
+  }
+  .learn-more:hover { color: #1a1a1a; }
+  .learn-more svg {
+    width: 12px; height: 12px;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    fill: none;
+  }
+
+  /* animation delays */
+  .feature-card:nth-child(1)  { animation-delay: 0.10s; }
+  .feature-card:nth-child(2)  { animation-delay: 0.16s; }
+  .feature-card:nth-child(3)  { animation-delay: 0.22s; }
+  .feature-card:nth-child(4)  { animation-delay: 0.28s; }
+  .feature-card:nth-child(5)  { animation-delay: 0.34s; }
+  .feature-card:nth-child(6)  { animation-delay: 0.40s; }
+  .feature-card:nth-child(7)  { animation-delay: 0.46s; }
+  .feature-card:nth-child(8)  { animation-delay: 0.52s; }
+  .feature-card:nth-child(9)  { animation-delay: 0.58s; }
+  .feature-card:nth-child(10) { animation-delay: 0.64s; }
+  .feature-card:nth-child(11) { animation-delay: 0.70s; }
+  .feature-card:nth-child(12) { animation-delay: 0.76s; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── CTA ── */
+  .cta-wrap {
+    text-align: center;
+    opacity: 0;
+    animation: fadeUp 0.55s ease 0.8s forwards;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    font-family: 'Jost', sans-serif;
+    font-size: 11.5px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #1a1a1a;
+    border: 1px solid #1a1a1a;
+    padding: 14px 40px;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: background 0.25s ease, color 0.25s ease;
+  }
+  .cta-btn:hover {
+    background: #1a1a1a;
+    color: #fff;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    .features-grid { grid-template-columns: repeat(2, 1fr); }
+    .feature-card { padding: 32px 20px 28px; }
+    body { padding: 56px 16px; }
+  }
+  @media (max-width: 480px) {
+    .features-grid { grid-template-columns: 1fr; }
+    body { padding: 40px 12px; }
+  }
+</style>
+</head>
+<body>
+
+<section class="section" aria-label="Girls-Only Accommodation">
+
+  <div class="section-header">
+    <p class="eyebrow">MRM Unique Homes · Girls-Only PG</p>
+    <h1 class="heading">Accommodation with Complete Care</h1>
+    <p class="subheading">Safe, comfortable, and fully secure accommodation for girls with thoughtfully designed amenities and warm hospitality.</p>
+  </div>
+
+  <div class="features-grid">
+
+    <div class="feature-card">
+      <div class="icon-circle">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/><path d="M9 10h6v1H9zM9 13h6v1H9z"/></svg>
+      </div>
+      <div class="feature-name">AC-Equipped Rooms</div>
+      <p class="feature-desc">Individual air conditioning in every room for year-round comfort.</p>
+      <a href="#" class="learn-more">Learn More <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div>
+
+    <div class="feature-card">
+      <div class="icon-circle">
+        <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+      </div>
+      <div class="feature-name">24/7 Power Backup</div>
+      <p class="feature-desc">Uninterrupted electricity with full generator backup at all times.</p>
+      <a href="#" class="learn-more">Learn More <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div>
+
+    <div class="feature-card">
+      <div class="icon-circle">
+        <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8l5 3-5 3V8zM1 20h14"/></svg>
+      </div>
+      <div class="feature-name">Free Campus Shuttle</div>
+      <p class="feature-desc">Complimentary drop and pick-up service to college every day.</p>
+      <a href="#" class="learn-more">Learn More <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div>
+
+    <div class="feature-card">
+      <div class="icon-circle">
+        <svg viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><circle cx="12" cy="20" r="1" fill="currentColor"/></svg>
+      </div>
+      <div class="feature-name">High-Speed Wi-Fi</div>
+      <p class="feature-desc">Fast, reliable internet across all rooms and common areas.</p>
+      <a href="#" class="learn-more">Learn More <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div>
+
+    <div class="feature-card">
+      <div class="icon-circle">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div class="feature-name">CCTV & Security</div>
+      <p class="feature-desc">360° surveillance with trained security personnel round the clock.</p>
+      <a href="#" class="learn-more">Learn More <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div>
+
+    <div class="feature-card">
+      <div class="icon-circle">
+        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      </div>
+      <div class="feature-name">Motherly Care</div>
+      <p class="feature-desc">Warm personal attention from our owner — you're family here.</p>
+      <a href="#" class="learn-more">Learn More <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div>
+
+    <div class="feature-card">
+      <div class="icon-circle">
+        <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 1 0 20M12 2a10 10 0 0 0 0 20"/><path d="M2 12h20"/><path d="M12 2c-2.76 3.63-4 7.27-4 10s1.24 6.37 4 10M12 2c2.76 3.63 4 7.27 4 10s-1.24 6.37-4 10"/></svg>
+      </div>
+      <div class="feature-name">Geyser & Hot Water</div>
+      <p class="feature-desc">Instant hot water available at all hours, every single day.</p>
+      <a href="#" class="learn-more">Learn More <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div>
+
+    <div class="feature-card">
+      <div class="icon-circle">
+        <svg viewBox="0 0 24 24"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>
+      </div>
+      <div class="feature-name">Home-Style Meals</div>
+      <p class="feature-desc">Freshly prepared, hygienic and nutritious meals daily.</p>
+      <a href="#" class="learn-more">Learn More <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div>
+
+    <div class="feature-card">
+      <div class="icon-circle">
+        <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 1 0 20M12 2a10 10 0 0 0 0 20"/><path d="M2 12h20"/><path d="M12 2c-2.76 3.63-4 7.27-4 10s1.24 6.37 4 10M12 2c2.76 3.63 4 7.27 4 10s-1.24 6.37-4 10"/></svg>
+      </div>
+      <div class="feature-name">Washing Machine</div>
+      <p class="feature-desc">Shared laundry facility available to all residents at no extra cost.</p>
+      <a href="#" class="learn-more">Learn More <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div>
+
+    <div class="feature-card">
+      <div class="icon-circle">
+        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      </div>
+      <div class="feature-name">Smart TV Lounge</div>
+      <p class="feature-desc">Relax and unwind with a premium smart TV in the shared lounge.</p>
+      <a href="#" class="learn-more">Learn More <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div>
+
+    <div class="feature-card">
+      <div class="icon-circle">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      </div>
+      <div class="feature-name">NCR Transport</div>
+      <p class="feature-desc">Convenient transport options available across the NCR region.</p>
+      <a href="#" class="learn-more">Learn More <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div>
+
+    <div class="feature-card">
+      <div class="icon-circle">
+        <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      </div>
+      <div class="feature-name">Student-Friendly Space</div>
+      <p class="feature-desc">Peaceful atmosphere designed for focused study and growth.</p>
+      <a href="#" class="learn-more">Learn More <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div>
+
+  </div>
+
+  <div class="cta-wrap">
+    <a href="#" class="cta-btn">Book Your Stay</a>
+  </div>
+
+</section>
+
+</body>
+</html>

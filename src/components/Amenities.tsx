@@ -9,7 +9,14 @@ import { Utensils, Dumbbell, BookOpen, Flower, Coffee, Laptop, Clock, Users, X, 
 import { AMENITIES_DATA } from '../data';
 import { Amenity } from '../types';
 
-export function Amenities() {
+interface AmenitiesProps {
+  maxItems?: number;
+  showMore?: boolean;
+  showMoreHash?: string;
+  showBackHome?: boolean;
+}
+
+export function Amenities({ maxItems = AMENITIES_DATA.length, showMore = false, showMoreHash = '#amenities-page', showBackHome = false }: AmenitiesProps) {
   const [selectedAmenity, setSelectedAmenity] = useState<Amenity | null>(null);
   const [reservationName, setReservationName] = useState('');
   const [reservationTime, setReservationTime] = useState('');
@@ -72,7 +79,7 @@ export function Amenities() {
 
       {/* Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-10">
-        {AMENITIES_DATA.map((amenity, index) => {
+        {AMENITIES_DATA.slice(0, maxItems).map((amenity, index) => {
           const IconComponent = getIcon(amenity.iconName);
           return (
             <motion.div
@@ -109,6 +116,31 @@ export function Amenities() {
           );
         })}
       </div>
+
+      {showMore && (
+        <div className="mt-12 flex justify-center">
+          <button
+            id="amenities-show-more-btn"
+            onClick={() => { window.location.hash = showMoreHash; }}
+            className="inline-flex items-center gap-2 rounded-full border border-black bg-black px-7 py-3 text-xs font-semibold uppercase tracking-widest text-white hover:bg-neutral-900 transition-all"
+          >
+            Show More
+            <ArrowRight className="h-4 w-4" />
+          </button>
+        </div>
+      )}
+
+      {showBackHome && (
+        <div className="mt-12 flex justify-center">
+          <button
+            id="amenities-back-home-btn"
+            onClick={() => { window.location.hash = ''; }}
+            className="inline-flex items-center gap-2 rounded-full border border-black bg-white px-7 py-3 text-xs font-semibold uppercase tracking-widest text-black hover:bg-gray-50 transition-all"
+          >
+            Back to Home
+          </button>
+        </div>
+      )}
 
       {/* Interactive Modal Panel */}
       <AnimatePresence>
