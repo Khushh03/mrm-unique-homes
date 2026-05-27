@@ -1,6 +1,0 @@
-{
-  "name": "MRM Unique Homes",
-  "description": "Ultra-luxury bespoke residences showcasing architectural integrity, understatement, and tranquil craftsmanship.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}
