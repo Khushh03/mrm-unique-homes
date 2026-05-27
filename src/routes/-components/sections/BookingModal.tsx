@@ -1,66 +1,78 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
-
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { X, Calendar, Clock, User, Phone, Mail, CheckCircle2, Building, ShieldCheck } from 'lucide-react';
-import { RESIDENCES_DATA } from '../data';
+import React, { useState } from 'react'
+import { motion, AnimatePresence } from 'motion/react'
+import {
+  X,
+  Calendar,
+  Clock,
+  User,
+  Phone,
+  Mail,
+  CheckCircle2,
+  Building,
+  ShieldCheck,
+} from 'lucide-react'
+import { RESIDENCES_DATA } from '#/data'
 
 interface BookingModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-  initialResidenceId?: string;
+  isOpen: boolean
+  onClose: () => void
+  initialResidenceId?: string
 }
 
-export function BookingModal({ isOpen, onClose, initialResidenceId }: BookingModalProps) {
-  const [step, setStep] = useState(1);
-  const [residenceId, setResidenceId] = useState(initialResidenceId || 'solo');
-  const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
-  const [email, setEmail] = useState('');
-  const [preferredDate, setPreferredDate] = useState('');
-  const [preferredTime, setPreferredTime] = useState('');
-  const [additionalNotes, setAdditionalNotes] = useState('');
-  const [isSubmitting, setIsSubmitting] = useState(false);
+export function BookingModal({
+  isOpen,
+  onClose,
+  initialResidenceId,
+}: BookingModalProps) {
+  const [step, setStep] = useState(1)
+  const [residenceId, setResidenceId] = useState(initialResidenceId || 'solo')
+  const [name, setName] = useState('')
+  const [phone, setPhone] = useState('')
+  const [email, setEmail] = useState('')
+  const [preferredDate, setPreferredDate] = useState('')
+  const [preferredTime, setPreferredTime] = useState('')
+  const [additionalNotes, setAdditionalNotes] = useState('')
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   // Sync initial preselection
   React.useEffect(() => {
     if (initialResidenceId) {
-      setResidenceId(initialResidenceId);
+      setResidenceId(initialResidenceId)
     }
-  }, [initialResidenceId]);
+  }, [initialResidenceId])
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+    e.preventDefault()
     if (!name || !phone || !email || !preferredDate) {
-      return;
+      return
     }
-    setIsSubmitting(true);
+    setIsSubmitting(true)
     setTimeout(() => {
-      setIsSubmitting(false);
-      setStep(3); // Success step
-    }, 1200);
-  };
+      setIsSubmitting(false)
+      setStep(3) // Success step
+    }, 1200)
+  }
 
-  const selectedResidence = RESIDENCES_DATA.find((r) => r.id === residenceId);
+  const selectedResidence = RESIDENCES_DATA.find((r) => r.id === residenceId)
 
   const resetForm = () => {
-    setStep(1);
-    setName('');
-    setPhone('');
-    setEmail('');
-    setPreferredDate('');
-    setPreferredTime('');
-    setAdditionalNotes('');
-    onClose();
-  };
+    setStep(1)
+    setName('')
+    setPhone('')
+    setEmail('')
+    setPreferredDate('')
+    setPreferredTime('')
+    setAdditionalNotes('')
+    onClose()
+  }
 
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-100 overflow-y-auto" id="booking-modal-overlay">
+        <div
+          className="fixed inset-0 z-100 overflow-y-auto"
+          id="booking-modal-overlay"
+        >
           {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
@@ -102,7 +114,8 @@ export function BookingModal({ isOpen, onClose, initialResidenceId }: BookingMod
                       Initiate Tour Consultation
                     </h3>
                     <p className="font-sans text-sm leading-relaxed text-on-surface-variant mb-6">
-                      Schedule a private guided walkthrough or online meeting with our boutique housing concierge.
+                      Schedule a private guided walkthrough or online meeting
+                      with our boutique housing concierge.
                     </p>
 
                     <div className="space-y-4">
@@ -122,8 +135,12 @@ export function BookingModal({ isOpen, onClose, initialResidenceId }: BookingMod
                                   : 'border-gray-200 hover:border-black text-gray-500 hover:text-black'
                               }`}
                             >
-                              <span className="font-sans text-xs font-semibold">{r.name}</span>
-                              <span className="font-sans text-[10px] text-gray-400 mt-0.5 font-medium">{r.pricePerMonth} per Bed</span>
+                              <span className="font-sans text-xs font-semibold">
+                                {r.name}
+                              </span>
+                              <span className="font-sans text-[10px] text-gray-400 mt-0.5 font-medium">
+                                {r.pricePerMonth} per Bed
+                              </span>
                             </button>
                           ))}
                         </div>
@@ -240,10 +257,18 @@ export function BookingModal({ isOpen, onClose, initialResidenceId }: BookingMod
                               onChange={(e) => setPreferredTime(e.target.value)}
                               className="w-full rounded-lg border border-outline-variant/50 bg-surface px-10 py-3 font-sans text-sm text-on-surface placeholder:text-outline/70 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors appearance-none"
                             >
-                              <option value="10:00 AM">10:00 AM – Morning</option>
-                              <option value="01:30 PM">01:30 PM – Afternoon</option>
-                              <option value="04:00 PM">04:00 PM – Late Afternoon</option>
-                              <option value="06:30 PM">06:30 PM – Sunset Consult</option>
+                              <option value="10:00 AM">
+                                10:00 AM – Morning
+                              </option>
+                              <option value="01:30 PM">
+                                01:30 PM – Afternoon
+                              </option>
+                              <option value="04:00 PM">
+                                04:00 PM – Late Afternoon
+                              </option>
+                              <option value="06:30 PM">
+                                06:30 PM – Sunset Consult
+                              </option>
                             </select>
                           </div>
                         </div>
@@ -305,21 +330,41 @@ export function BookingModal({ isOpen, onClose, initialResidenceId }: BookingMod
                       Walkthrough Curated
                     </h3>
                     <p className="font-sans text-sm leading-relaxed text-on-surface-variant max-w-sm mx-auto mb-8">
-                      Thank you, <strong className="text-on-surface">{name}</strong>. An appointments concierge will address your inquiry for <strong className="text-on-surface">{selectedResidence?.name}</strong>. We will contact you at <strong className="text-on-surface">{phone}</strong> shortly.
+                      Thank you,{' '}
+                      <strong className="text-on-surface">{name}</strong>. An
+                      appointments concierge will address your inquiry for{' '}
+                      <strong className="text-on-surface">
+                        {selectedResidence?.name}
+                      </strong>
+                      . We will contact you at{' '}
+                      <strong className="text-on-surface">{phone}</strong>{' '}
+                      shortly.
                     </p>
 
                     <div className="rounded-xl border border-outline-variant/20 bg-surface p-4 text-left space-y-3 mb-8 max-w-sm mx-auto">
                       <div className="flex items-center gap-3 text-xs text-on-surface-variant">
                         <Building className="h-4 w-4 text-soft-sage shrink-0" />
-                        <span>Residency Tier: <strong className="text-primary">{selectedResidence?.name}</strong></span>
+                        <span>
+                          Residency Tier:{' '}
+                          <strong className="text-primary">
+                            {selectedResidence?.name}
+                          </strong>
+                        </span>
                       </div>
                       <div className="flex items-center gap-3 text-xs text-on-surface-variant">
                         <Calendar className="h-4 w-4 text-soft-sage shrink-0" />
-                        <span>Date: <strong>{preferredDate} ({preferredTime})</strong></span>
+                        <span>
+                          Date:{' '}
+                          <strong>
+                            {preferredDate} ({preferredTime})
+                          </strong>
+                        </span>
                       </div>
                       <div className="flex items-center gap-3 text-xs text-on-surface-variant">
                         <ShieldCheck className="h-4 w-4 text-soft-sage shrink-0" />
-                        <span>Email Copy: <strong>{email}</strong></span>
+                        <span>
+                          Email Copy: <strong>{email}</strong>
+                        </span>
                       </div>
                     </div>
 
@@ -338,5 +383,5 @@ export function BookingModal({ isOpen, onClose, initialResidenceId }: BookingMod
         </div>
       )}
     </AnimatePresence>
-  );
+  )
 }

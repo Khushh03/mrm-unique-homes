@@ -1,45 +1,40 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
-
-import React, { useState } from 'react';
-import { Share2, Instagram, Mail, Phone, MapPin } from 'lucide-react';
+import { useState } from 'react'
+import { Share2, Instagram, Mail, Phone, MapPin } from 'lucide-react'
 
 export function Footer() {
-  const [copied, setCopied] = useState(false);
+  const [copied, setCopied] = useState(false)
 
   const scrollToId = (id: string) => {
-    const el = document.getElementById(id);
+    const el = document.getElementById(id)
     if (el) {
-      const offset = 80;
-      const pos = el.getBoundingClientRect().top + window.pageYOffset - offset;
-      window.scrollTo({ top: pos, behavior: 'smooth' });
+      const offset = 80
+      const pos = el.getBoundingClientRect().top + window.pageYOffset - offset
+      window.scrollTo({ top: pos, behavior: 'smooth' })
     }
-  };
+  }
 
   const handleShare = () => {
     if (navigator.share) {
-      navigator.share({
-        title: 'MRM Unique Homes',
-        text: 'Bespoke living and architectural integrity.',
-        url: window.location.href
-      }).catch(console.error);
+      navigator
+        .share({
+          title: 'MRM Unique Homes',
+          text: 'Bespoke living and architectural integrity.',
+          url: window.location.href,
+        })
+        .catch(console.error)
     } else {
       // Fallback
-      navigator.clipboard.writeText(window.location.href);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
+      navigator.clipboard.writeText(window.location.href)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
     }
-  };
+  }
 
   return (
     <footer className="bg-surface-container w-full pt-20 pb-12 border-t border-outline-variant/10 select-none">
       <div className="max-w-7xl mx-auto px-6 md:px-20">
-        
         {/* Main Grid split */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-          
           {/* Brand Col */}
           <div className="md:col-span-2 space-y-4">
             <button
@@ -49,7 +44,8 @@ export function Footer() {
               MRM Unique Homes
             </button>
             <p className="font-sans text-xs md:text-sm text-on-surface-variant max-w-sm leading-relaxed">
-              Architectural Integrity &amp; Bespoke Living. Elevating the standard of modern residency.
+              Architectural Integrity &amp; Bespoke Living. Elevating the
+              standard of modern residency.
             </p>
           </div>
 
@@ -152,25 +148,30 @@ export function Footer() {
               </li>
             </ul>
           </div>
-
         </div>
 
         {/* Footer Base */}
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-outline-variant/10 text-[11px] text-on-surface-variant/70 gap-4">
           <p className="font-sans text-center md:text-left">
-            © {new Date().getFullYear()} MRM Unique Homes. Architectural Integrity &amp; Bespoke Living. All private rights reserved.
+            © {new Date().getFullYear()} MRM Unique Homes. Architectural
+            Integrity &amp; Bespoke Living. All private rights reserved.
           </p>
           <div className="flex gap-6">
-            <a href="#" className="font-sans hover:text-primary transition-colors">
+            <a
+              href="#"
+              className="font-sans hover:text-primary transition-colors"
+            >
               Privacy Policy
             </a>
-            <a href="#" className="font-sans hover:text-primary transition-colors">
+            <a
+              href="#"
+              className="font-sans hover:text-primary transition-colors"
+            >
               Terms of Service
             </a>
           </div>
         </div>
-
       </div>
     </footer>
-  );
+  )
 }

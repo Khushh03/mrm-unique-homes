@@ -1,22 +1,20 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
-
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { ChevronDown, HelpCircle, FileText, CheckCircle2 } from 'lucide-react';
-import { FAQ_DATA } from '../data';
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'motion/react'
+import { ChevronDown } from 'lucide-react'
+import { FAQ_DATA } from '#/data'
 
 export function FaqSection() {
-  const [openId, setOpenId] = useState<string | null>('faq-1');
+  const [openId, setOpenId] = useState<string | null>('faq-1')
 
   const toggleFaq = (id: string) => {
-    setOpenId(openId === id ? null : id);
-  };
+    setOpenId(openId === id ? null : id)
+  }
 
   return (
-    <section id="inquiries" className="max-w-3xl mx-auto px-6 py-24 select-none">
+    <section
+      id="inquiries"
+      className="max-w-3xl mx-auto px-6 py-24 select-none"
+    >
       {/* Title */}
       <div className="text-center mb-16 space-y-2">
         <span className="text-xs font-semibold uppercase tracking-widest text-soft-sage">
@@ -30,7 +28,7 @@ export function FaqSection() {
       {/* Accordion List */}
       <div className="space-y-4 border-t border-outline-variant/20 pt-6">
         {FAQ_DATA.map((faq) => {
-          const isOpen = openId === faq.id;
+          const isOpen = openId === faq.id
           return (
             <div
               key={faq.id}
@@ -68,9 +66,9 @@ export function FaqSection() {
                 )}
               </AnimatePresence>
             </div>
-          );
+          )
         })}
       </div>
     </section>
-  );
+  )
 }

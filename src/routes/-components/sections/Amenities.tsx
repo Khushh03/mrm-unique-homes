@@ -1,86 +1,102 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
-
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { Utensils, Dumbbell, BookOpen, Flower, Coffee, Laptop, Clock, Users, X, ArrowRight, ShieldCheck, CalendarRange } from 'lucide-react';
-import { AMENITIES_DATA } from '../data';
-import { Amenity } from '../types';
+import React, { useState } from 'react'
+import { motion, AnimatePresence } from 'motion/react'
+import {
+  Utensils,
+  Dumbbell,
+  BookOpen,
+  Flower,
+  Coffee,
+  Laptop,
+  Clock,
+  Users,
+  X,
+  ArrowRight,
+  ShieldCheck,
+} from 'lucide-react'
+import { AMENITIES_DATA } from '#/data'
+import type { Amenity } from '#/types'
 
 interface AmenitiesProps {
-  maxItems?: number;
-  showMore?: boolean;
-  showMoreHash?: string;
-  showBackHome?: boolean;
+  maxItems?: number
+  showMore?: boolean
+  showMoreHash?: string
+  showBackHome?: boolean
 }
 
-export function Amenities({ maxItems = AMENITIES_DATA.length, showMore = false, showMoreHash = '#amenities-page', showBackHome = false }: AmenitiesProps) {
-  const [selectedAmenity, setSelectedAmenity] = useState<Amenity | null>(null);
-  const [reservationName, setReservationName] = useState('');
-  const [reservationTime, setReservationTime] = useState('');
-  const [reservationDate, setReservationDate] = useState('');
-  const [reservedSuccess, setReservedSuccess] = useState(false);
-  const [reserving, setReserving] = useState(false);
+export function Amenities({
+  maxItems = AMENITIES_DATA.length,
+  showMore = false,
+  showMoreHash = '#amenities-page',
+  showBackHome = false,
+}: AmenitiesProps) {
+  const [selectedAmenity, setSelectedAmenity] = useState<Amenity | null>(null)
+  const [reservationName, setReservationName] = useState('')
+  const [reservationTime, setReservationTime] = useState('')
+  const [reservationDate, setReservationDate] = useState('')
+  const [reservedSuccess, setReservedSuccess] = useState(false)
+  const [reserving, setReserving] = useState(false)
 
   const getIcon = (name: string) => {
     switch (name) {
       case 'Utensils':
-        return Utensils;
+        return Utensils
       case 'Dumbbell':
-        return Dumbbell;
+        return Dumbbell
       case 'BookOpen':
-        return BookOpen;
+        return BookOpen
       case 'Flower':
-        return Flower;
+        return Flower
       case 'Coffee':
-        return Coffee;
+        return Coffee
       case 'Laptop':
-        return Laptop;
+        return Laptop
       default:
-        return Flower;
+        return Flower
     }
-  };
+  }
 
   const handleReserveSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!reservationName || !reservationTime || !reservationDate) return;
-    setReserving(true);
+    e.preventDefault()
+    if (!reservationName || !reservationTime || !reservationDate) return
+    setReserving(true)
     setTimeout(() => {
-      setReserving(false);
-      setReservedSuccess(true);
-    }, 1000);
-  };
+      setReserving(false)
+      setReservedSuccess(true)
+    }, 1000)
+  }
 
   const resetReservation = () => {
-    setReservationName('');
-    setReservationTime('');
-    setReservationDate('');
-    setReservedSuccess(false);
-  };
+    setReservationName('')
+    setReservationTime('')
+    setReservationDate('')
+    setReservedSuccess(false)
+  }
 
   const closeModal = () => {
-    setSelectedAmenity(null);
-    resetReservation();
-  };
+    setSelectedAmenity(null)
+    resetReservation()
+  }
 
   return (
-    <section id="amenities" className="max-w-7xl mx-auto px-6 md:px-20 py-24 select-none">
+    <section
+      id="amenities"
+      className="max-w-7xl mx-auto px-6 md:px-20 py-24 select-none"
+    >
       {/* Section Header */}
       <div className="text-center mb-16 space-y-4">
         <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-primary">
           Curated Amenities
         </h2>
         <p className="font-sans text-sm md:text-base text-on-surface-variant max-w-xl mx-auto leading-relaxed">
-          Beyond the private quarters, MRM Unique Homes offers spaces designed to elevate daily rituals and foster a sense of community.
+          Beyond the private quarters, MRM Unique Homes offers spaces designed
+          to elevate daily rituals and foster a sense of community.
         </p>
       </div>
 
       {/* Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-10">
         {AMENITIES_DATA.slice(0, maxItems).map((amenity, index) => {
-          const IconComponent = getIcon(amenity.iconName);
+          const IconComponent = getIcon(amenity.iconName)
           return (
             <motion.div
               key={amenity.id}
@@ -113,7 +129,7 @@ export function Amenities({ maxItems = AMENITIES_DATA.length, showMore = false, 
                 Learn More <ArrowRight className="h-3 w-3" />
               </button>
             </motion.div>
-          );
+          )
         })}
       </div>
 
@@ -121,7 +137,9 @@ export function Amenities({ maxItems = AMENITIES_DATA.length, showMore = false, 
         <div className="mt-12 flex justify-center">
           <button
             id="amenities-show-more-btn"
-            onClick={() => { window.location.hash = showMoreHash; }}
+            onClick={() => {
+              window.location.hash = showMoreHash
+            }}
             className="inline-flex items-center gap-2 rounded-full border border-black bg-black px-7 py-3 text-xs font-semibold uppercase tracking-widest text-white hover:bg-neutral-900 transition-all"
           >
             Show More
@@ -134,7 +152,9 @@ export function Amenities({ maxItems = AMENITIES_DATA.length, showMore = false, 
         <div className="mt-12 flex justify-center">
           <button
             id="amenities-back-home-btn"
-            onClick={() => { window.location.hash = ''; }}
+            onClick={() => {
+              window.location.hash = ''
+            }}
             className="inline-flex items-center gap-2 rounded-full border border-black bg-white px-7 py-3 text-xs font-semibold uppercase tracking-widest text-black hover:bg-gray-50 transition-all"
           >
             Back to Home
@@ -145,7 +165,10 @@ export function Amenities({ maxItems = AMENITIES_DATA.length, showMore = false, 
       {/* Interactive Modal Panel */}
       <AnimatePresence>
         {selectedAmenity && (
-          <div className="fixed inset-0 z-100 overflow-y-auto" id="amenity-modal-overlay">
+          <div
+            className="fixed inset-0 z-100 overflow-y-auto"
+            id="amenity-modal-overlay"
+          >
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -192,7 +215,9 @@ export function Amenities({ maxItems = AMENITIES_DATA.length, showMore = false, 
                 {/* Right Side: Details & Interactive Reservation Form */}
                 <div className="w-full md:w-1/2 p-6 md:p-8 space-y-6">
                   <div>
-                    <h5 className="font-serif text-lg font-bold text-primary mb-2">Architectural Framing</h5>
+                    <h5 className="font-serif text-lg font-bold text-primary mb-2">
+                      Architectural Framing
+                    </h5>
                     <p className="font-sans text-xs md:text-sm text-on-surface-variant leading-relaxed">
                       {selectedAmenity.detailText}
                     </p>
@@ -202,22 +227,33 @@ export function Amenities({ maxItems = AMENITIES_DATA.length, showMore = false, 
                     <div className="flex items-center gap-2.5">
                       <Clock className="h-4.5 w-4.5 text-soft-sage shrink-0" />
                       <div>
-                        <span className="block text-[9px] uppercase font-mono text-on-surface-variant/70">Hours</span>
-                        <span className="font-sans text-xs font-semibold text-primary">{selectedAmenity.operatingHours}</span>
+                        <span className="block text-[9px] uppercase font-mono text-on-surface-variant/70">
+                          Hours
+                        </span>
+                        <span className="font-sans text-xs font-semibold text-primary">
+                          {selectedAmenity.operatingHours}
+                        </span>
                       </div>
                     </div>
                     <div className="flex items-center gap-2.5">
                       <Users className="h-4.5 w-4.5 text-soft-sage shrink-0" />
                       <div>
-                        <span className="block text-[9px] uppercase font-mono text-on-surface-variant/70">Capacity</span>
-                        <span className="font-sans text-xs font-semibold text-primary">{selectedAmenity.capacityLimit}</span>
+                        <span className="block text-[9px] uppercase font-mono text-on-surface-variant/70">
+                          Capacity
+                        </span>
+                        <span className="font-sans text-xs font-semibold text-primary">
+                          {selectedAmenity.capacityLimit}
+                        </span>
                       </div>
                     </div>
                   </div>
 
                   {/* Booking State Form */}
                   {!reservedSuccess ? (
-                    <form onSubmit={handleReserveSubmit} className="space-y-3 pt-2">
+                    <form
+                      onSubmit={handleReserveSubmit}
+                      className="space-y-3 pt-2"
+                    >
                       <h6 className="font-sans text-xs font-bold uppercase tracking-wider text-primary">
                         Reserve a private spot
                       </h6>
@@ -256,7 +292,9 @@ export function Amenities({ maxItems = AMENITIES_DATA.length, showMore = false, 
                         disabled={reserving}
                         className="w-full bg-black text-white text-xs font-semibold uppercase tracking-widest py-3.5 rounded-xl hover:bg-neutral-800 transition-all cursor-pointer shadow-md"
                       >
-                        {reserving ? 'Checking Slots...' : 'Confirm Amenity Pass'}
+                        {reserving
+                          ? 'Checking Slots...'
+                          : 'Confirm Amenity Pass'}
                       </button>
                     </form>
                   ) : (
@@ -266,9 +304,15 @@ export function Amenities({ maxItems = AMENITIES_DATA.length, showMore = false, 
                       className="rounded-lg border border-soft-sage/30 bg-surface-container/20 p-4 text-center space-y-2 pt-4"
                     >
                       <ShieldCheck className="h-8 w-8 text-soft-sage mx-auto" />
-                      <p className="font-serif text-sm font-semibold text-primary">Reservation Confirmed</p>
+                      <p className="font-serif text-sm font-semibold text-primary">
+                        Reservation Confirmed
+                      </p>
                       <p className="font-sans text-[11px] text-on-surface-variant max-w-xs mx-auto">
-                        Your pass has been synced for <strong>{selectedAmenity.name}</strong> on <strong>{reservationDate}</strong> at <strong>{reservationTime}</strong>. Welcome card activated.
+                        Your pass has been synced for{' '}
+                        <strong>{selectedAmenity.name}</strong> on{' '}
+                        <strong>{reservationDate}</strong> at{' '}
+                        <strong>{reservationTime}</strong>. Welcome card
+                        activated.
                       </p>
                       <button
                         type="button"
@@ -286,5 +330,5 @@ export function Amenities({ maxItems = AMENITIES_DATA.length, showMore = false, 
         )}
       </AnimatePresence>
     </section>
-  );
+  )
 }

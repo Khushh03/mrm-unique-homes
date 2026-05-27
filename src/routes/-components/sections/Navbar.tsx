@@ -1,66 +1,68 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
-
-import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
-import logo from '../assets/logo.svg';
+import { useState, useEffect } from 'react'
+import { Menu, X } from 'lucide-react'
+import { motion, AnimatePresence } from 'motion/react'
+import logo from '#/assets/logo.svg'
 
 interface NavbarProps {
-  onOpenBooking: () => void;
+  onOpenBooking: () => void
 }
 
 export function Navbar({ onOpenBooking }: NavbarProps) {
-  const [activeSection, setActiveSection] = useState('home');
-  const [scrolled, setScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home')
+  const [scrolled, setScrolled] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      setScrolled(window.scrollY > 20)
 
       // Simple intersection highlight for nav items
-      const sections = ['home', 'residences', 'amenities', 'connected-living', 'visual-journal', 'inquiries'];
+      const sections = [
+        'home',
+        'residences',
+        'amenities',
+        'connected-living',
+        'visual-journal',
+        'inquiries',
+      ]
       for (const sectionId of sections.reverse()) {
-        const element = document.getElementById(sectionId);
+        const element = document.getElementById(sectionId)
         if (element) {
-          const rect = element.getBoundingClientRect();
+          const rect = element.getBoundingClientRect()
           if (rect.top <= 120) {
-            setActiveSection(sectionId);
-            break;
+            setActiveSection(sectionId)
+            break
           }
         }
       }
-    };
+    }
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const scrollToSection = (id: string) => {
-    setMobileMenuOpen(false);
-    const element = document.getElementById(id);
+    setMobileMenuOpen(false)
+    const element = document.getElementById(id)
     if (element) {
-      const offset = 80; // height of fixed navbar
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
+      const offset = 80 // height of fixed navbar
+      const elementPosition = element.getBoundingClientRect().top
+      const offsetPosition = elementPosition + window.pageYOffset - offset
 
       window.scrollTo({
         top: offsetPosition,
-        behavior: 'smooth'
-      });
+        behavior: 'smooth',
+      })
     }
-  };
+  }
 
   const navLinks = [
     { label: 'Residences', fallbackId: 'residences' },
     { label: 'Amenities', fallbackId: 'amenities' },
     { label: 'The Experience', fallbackId: 'home' },
     { label: 'Location', fallbackId: 'connected-living' },
-    { label: 'Inquiry', fallbackId: 'inquiries' }
-  ];
+    { label: 'Inquiry', fallbackId: 'inquiries' },
+  ]
 
   return (
     <nav
@@ -79,14 +81,18 @@ export function Navbar({ onOpenBooking }: NavbarProps) {
           type="button"
           className="flex items-center gap-3 cursor-pointer outline-none hover:opacity-90 transition-opacity"
         >
-          <img src={logo} alt="MRM Unique Homes" className="h-12 w-auto object-contain" />
+          <img
+            src={logo}
+            alt="MRM Unique Homes"
+            className="h-12 w-auto object-contain"
+          />
           <span className="sr-only">MRM Unique Homes</span>
         </button>
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-10">
           {navLinks.map((link) => {
-            const isSelected = activeSection === link.fallbackId;
+            const isSelected = activeSection === link.fallbackId
             return (
               <button
                 key={link.label}
@@ -107,7 +113,7 @@ export function Navbar({ onOpenBooking }: NavbarProps) {
                   />
                 )}
               </button>
-            );
+            )
           })}
         </div>
 
@@ -129,7 +135,11 @@ export function Navbar({ onOpenBooking }: NavbarProps) {
           className="md:hidden text-primary p-1.5 rounded-full hover:bg-surface-container transition-colors"
           aria-label="Toggle navigation menu"
         >
-          {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          {mobileMenuOpen ? (
+            <X className="h-6 w-6" />
+          ) : (
+            <Menu className="h-6 w-6" />
+          )}
         </button>
       </div>
 
@@ -145,7 +155,7 @@ export function Navbar({ onOpenBooking }: NavbarProps) {
           >
             <div className="px-6 py-6 space-y-4">
               {navLinks.map((link) => {
-                const isSelected = activeSection === link.fallbackId;
+                const isSelected = activeSection === link.fallbackId
                 return (
                   <button
                     key={link.label}
@@ -159,14 +169,14 @@ export function Navbar({ onOpenBooking }: NavbarProps) {
                   >
                     {link.label}
                   </button>
-                );
+                )
               })}
               <div className="pt-4 border-t border-outline-variant/10">
                 <button
                   id="nav-mobile-tour-btn"
                   onClick={() => {
-                    setMobileMenuOpen(false);
-                    onOpenBooking();
+                    setMobileMenuOpen(false)
+                    onOpenBooking()
                   }}
                   className="w-full text-center bg-primary-container text-on-primary text-xs font-semibold uppercase tracking-widest py-3.5 rounded-full hover:bg-secondary transition-colors"
                 >
@@ -178,5 +188,5 @@ export function Navbar({ onOpenBooking }: NavbarProps) {
         )}
       </AnimatePresence>
     </nav>
-  );
+  )
 }

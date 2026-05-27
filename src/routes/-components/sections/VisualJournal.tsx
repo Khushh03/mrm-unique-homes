@@ -1,59 +1,76 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
-
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { Heart, MessageCircle, MapPin, X, ZoomIn, ArrowRight } from 'lucide-react';
-import { GALLERY_DATA } from '../data';
-import { GalleryItem } from '../types';
+import React, { useState } from 'react'
+import { motion, AnimatePresence } from 'motion/react'
+import {
+  Heart,
+  MessageCircle,
+  MapPin,
+  X,
+  ZoomIn,
+  ArrowRight,
+} from 'lucide-react'
+import { GALLERY_DATA } from '#/data'
+import type { GalleryItem } from '#/types'
 
 export function VisualJournal() {
-  const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null);
-  const [likedList, setLikedList] = useState<Record<string, boolean>>({});
-  const [commentsList, setCommentsList] = useState<Record<string, { user: string; text: string }[]>>({
+  const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null)
+  const [likedList, setLikedList] = useState<Record<string, boolean>>({})
+  const [commentsList, setCommentsList] = useState<
+    Record<string, { user: string; text: string }[]>
+  >({
     'gal-1': [
-      { user: 'arch_collector', text: 'Stunning play of indirect shadows. The sandstones blend perfectly.' },
-      { user: 'monolith_studio', text: 'Classic high contrast. Loving the forest elements.' }
+      {
+        user: 'arch_collector',
+        text: 'Stunning play of indirect shadows. The sandstones blend perfectly.',
+      },
+      {
+        user: 'monolith_studio',
+        text: 'Classic high contrast. Loving the forest elements.',
+      },
     ],
     'gal-2': [
-      { user: 'editorial_living', text: 'The chairs look extremely organic in this layout!' }
+      {
+        user: 'editorial_living',
+        text: 'The chairs look extremely organic in this layout!',
+      },
     ],
     'gal-3': [
-      { user: 'p_tranquil', text: 'This bedroom setup feels so breathing, very safe color choices.' }
-    ]
-  });
-  
-  const [newCommentName, setNewCommentName] = useState('');
-  const [newCommentText, setNewCommentText] = useState('');
+      {
+        user: 'p_tranquil',
+        text: 'This bedroom setup feels so breathing, very safe color choices.',
+      },
+    ],
+  })
+
+  const [newCommentName, setNewCommentName] = useState('')
+  const [newCommentText, setNewCommentText] = useState('')
 
   const toggleLike = (id: string, e?: React.MouseEvent) => {
-    if (e) e.stopPropagation();
+    if (e) e.stopPropagation()
     setLikedList((prev) => ({
       ...prev,
-      [id]: !prev[id]
-    }));
-  };
+      [id]: !prev[id],
+    }))
+  }
 
   const handlePostComment = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!selectedItem || !newCommentName.trim() || !newCommentText.trim()) return;
+    e.preventDefault()
+    if (!selectedItem || !newCommentName.trim() || !newCommentText.trim())
+      return
 
-    const itemId = selectedItem.id;
+    const itemId = selectedItem.id
     const commentRecord = {
       user: newCommentName.trim().replace(/\s+/g, '_').toLowerCase(),
-      text: newCommentText.trim()
-    };
+      text: newCommentText.trim(),
+    }
 
     setCommentsList((prev) => ({
       ...prev,
-      [itemId]: [...(prev[itemId] || []), commentRecord]
-    }));
+      [itemId]: [...(prev[itemId] || []), commentRecord],
+    }))
 
-    setNewCommentName('');
-    setNewCommentText('');
-  };
+    setNewCommentName('')
+    setNewCommentText('')
+  }
 
   return (
     <section id="visual-journal" className="py-24 select-none">
@@ -82,9 +99,9 @@ export function VisualJournal() {
       {/* Grid of gallery */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 px-4 sm:px-6 md:px-10 max-w-[1400px] mx-auto">
         {GALLERY_DATA.map((item) => {
-          const isLiked = likedList[item.id];
-          const calculatedLikes = item.likes + (isLiked ? 1 : 0);
-          
+          const isLiked = likedList[item.id]
+          const calculatedLikes = item.likes + (isLiked ? 1 : 0)
+
           return (
             <motion.div
               key={item.id}
@@ -118,7 +135,9 @@ export function VisualJournal() {
                     onClick={(e) => toggleLike(item.id, e)}
                     className="flex items-center gap-1 text-xs hover:text-[#ba1a1a] transition-colors"
                   >
-                    <Heart className={`h-4 w-4 ${isLiked ? 'fill-[#ba1a1a] text-[#ba1a1a]' : ''}`} />
+                    <Heart
+                      className={`h-4 w-4 ${isLiked ? 'fill-[#ba1a1a] text-[#ba1a1a]' : ''}`}
+                    />
                     <strong>{calculatedLikes}</strong>
                   </button>
                   <span className="flex items-center gap-1 text-xs">
@@ -129,14 +148,17 @@ export function VisualJournal() {
                 </div>
               </div>
             </motion.div>
-          );
+          )
         })}
       </div>
 
       {/* Light-box & Interactive Comments Panel */}
       <AnimatePresence>
         {selectedItem && (
-          <div className="fixed inset-0 z-100 overflow-y-auto" id="lightbox-overlay">
+          <div
+            className="fixed inset-0 z-100 overflow-y-auto"
+            id="lightbox-overlay"
+          >
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -176,12 +198,13 @@ export function VisualJournal() {
 
                 {/* Engagement details and Comments panel */}
                 <div className="w-full md:w-2/5 p-6 md:p-8 flex flex-col justify-between space-y-6 max-h-[500px] md:max-h-[600px] overflow-y-auto">
-                  
                   {/* Top content */}
                   <div className="space-y-4">
                     <div className="flex justify-between items-center">
-                      <p className="font-serif text-base font-bold text-primary">Visual Journal</p>
-                      
+                      <p className="font-serif text-base font-bold text-primary">
+                        Visual Journal
+                      </p>
+
                       {/* Interactive Love Button */}
                       <button
                         id="lightbox-like-btn"
@@ -192,41 +215,68 @@ export function VisualJournal() {
                             : 'bg-transparent text-on-surface-variant hover:text-primary border-outline'
                         }`}
                       >
-                        <Heart className={`h-3.5 w-3.5 ${likedList[selectedItem.id] ? 'fill-current' : ''}`} />
-                        <span>{likedList[selectedItem.id] ? 'Liked' : 'Like'}</span>
+                        <Heart
+                          className={`h-3.5 w-3.5 ${likedList[selectedItem.id] ? 'fill-current' : ''}`}
+                        />
+                        <span>
+                          {likedList[selectedItem.id] ? 'Liked' : 'Like'}
+                        </span>
                       </button>
                     </div>
 
                     <p className="font-sans text-xs text-on-surface-variant italic">
-                      "Each photograph captures a direct intersection of sandstone, warmth, and natural linens under natural sunrise panels."
+                      "Each photograph captures a direct intersection of
+                      sandstone, warmth, and natural linens under natural
+                      sunrise panels."
                     </p>
 
                     {/* Total Likes */}
                     <div className="text-xs text-on-surface border-t border-outline-variant/15 pt-3">
-                      Liked by <strong>{selectedItem.likes + (likedList[selectedItem.id] ? 1 : 0)} residents</strong>
+                      Liked by{' '}
+                      <strong>
+                        {selectedItem.likes +
+                          (likedList[selectedItem.id] ? 1 : 0)}{' '}
+                        residents
+                      </strong>
                     </div>
 
                     {/* Comments Scrollable List */}
                     <div className="space-y-3 pt-2">
                       <span className="block text-[10px] uppercase font-mono tracking-wider text-soft-sage">
-                        Journal Replies ({(commentsList[selectedItem.id] || []).length})
+                        Journal Replies (
+                        {(commentsList[selectedItem.id] || []).length})
                       </span>
                       <div className="space-y-2.5 max-h-[160px] overflow-y-auto pr-1">
-                        {(commentsList[selectedItem.id] || []).map((comm, idx) => (
-                          <div key={idx} className="text-xs space-y-0.5 border-b border-outline-variant/5 pb-2">
-                            <span className="font-mono font-bold text-primary">@{comm.user}</span>
-                            <p className="font-sans text-on-surface-variant leading-relaxed">{comm.text}</p>
-                          </div>
-                        ))}
-                        {(!commentsList[selectedItem.id] || commentsList[selectedItem.id].length === 0) && (
-                          <p className="text-xs italic text-on-surface-variant/60">No responses yet. Be the first to reply.</p>
+                        {(commentsList[selectedItem.id] || []).map(
+                          (comm, idx) => (
+                            <div
+                              key={idx}
+                              className="text-xs space-y-0.5 border-b border-outline-variant/5 pb-2"
+                            >
+                              <span className="font-mono font-bold text-primary">
+                                @{comm.user}
+                              </span>
+                              <p className="font-sans text-on-surface-variant leading-relaxed">
+                                {comm.text}
+                              </p>
+                            </div>
+                          ),
+                        )}
+                        {(!commentsList[selectedItem.id] ||
+                          commentsList[selectedItem.id].length === 0) && (
+                          <p className="text-xs italic text-on-surface-variant/60">
+                            No responses yet. Be the first to reply.
+                          </p>
                         )}
                       </div>
                     </div>
                   </div>
 
                   {/* Add Comments form */}
-                  <form onSubmit={handlePostComment} className="pt-4 border-t border-gray-150 space-y-2">
+                  <form
+                    onSubmit={handlePostComment}
+                    className="pt-4 border-t border-gray-150 space-y-2"
+                  >
                     <input
                       id="comment-input-name"
                       required
@@ -255,7 +305,6 @@ export function VisualJournal() {
                       </button>
                     </div>
                   </form>
-
                 </div>
               </motion.div>
             </div>
@@ -263,5 +312,5 @@ export function VisualJournal() {
         )}
       </AnimatePresence>
     </section>
-  );
+  )
 }

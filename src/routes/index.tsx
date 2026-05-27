@@ -1,53 +1,56 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
+import { createFileRoute } from '@tanstack/react-router'
+import { useEffect, useState } from 'react'
+import { Navbar } from './-components/sections/Navbar'
+import { Hero } from './-components/sections/Hero'
+import { Stats } from './-components/sections/Stats'
+import { Amenities } from './-components/sections/Amenities'
+import { Residences } from './-components/sections/Residences'
+import { ConnectedLiving } from './-components/sections/ConnectedLiving'
+import { Testimonials } from './-components/sections/Testimonials'
+import { VisualJournal } from './-components/sections/VisualJournal'
+import { FaqSection } from './-components/sections/FaqSection'
+import { LeadCapture } from './-components/sections/LeadCapture'
+import { Footer } from './-components/sections/Footer'
+import { BookingModal } from './-components/sections/BookingModal'
 
-import { useEffect, useState } from 'react';
-import { Navbar } from './components/Navbar';
-import { Hero } from './components/Hero';
-import { Stats } from './components/Stats';
-import { Amenities } from './components/Amenities';
-import { Residences } from './components/Residences';
-import { ConnectedLiving } from './components/ConnectedLiving';
-import { Testimonials } from './components/Testimonials';
-import { VisualJournal } from './components/VisualJournal';
-import { FaqSection } from './components/FaqSection';
-import { LeadCapture } from './components/LeadCapture';
-import { Footer } from './components/Footer';
-import { BookingModal } from './components/BookingModal';
+export const Route = createFileRoute('/')({ component: Home })
 
-export default function App() {
-  const [bookingOpen, setBookingOpen] = useState(false);
-  const [selectedResidenceId, setSelectedResidenceId] = useState<string | undefined>(undefined);
+function Home() {
+  const [bookingOpen, setBookingOpen] = useState(false)
+  const [selectedResidenceId, setSelectedResidenceId] = useState<
+    string | undefined
+  >(undefined)
   const [currentPage, setCurrentPage] = useState<'home' | 'amenities'>(() =>
-    window.location.hash === '#amenities-page' ? 'amenities' : 'home'
-  );
+    window.location.hash === '#amenities-page' ? 'amenities' : 'home',
+  )
 
   useEffect(() => {
     const handleHashChange = () => {
-      setCurrentPage(window.location.hash === '#amenities-page' ? 'amenities' : 'home');
-    };
+      setCurrentPage(
+        window.location.hash === '#amenities-page' ? 'amenities' : 'home',
+      )
+    }
 
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
-  }, []);
+    window.addEventListener('hashchange', handleHashChange)
+    return () => window.removeEventListener('hashchange', handleHashChange)
+  }, [])
 
   const handleOpenBooking = () => {
-    setSelectedResidenceId(undefined);
-    setBookingOpen(true);
-  };
+    setSelectedResidenceId(undefined)
+    setBookingOpen(true)
+  }
 
   const handleOpenBookingWithId = (id: string) => {
-    setSelectedResidenceId(id);
-    setBookingOpen(true);
-  };
+    setSelectedResidenceId(id)
+    setBookingOpen(true)
+  }
 
   return (
     <div className="relative min-h-screen bg-background text-on-surface flex flex-col justify-between selection:bg-primary selection:text-on-primary">
       {/* Absolute top announcement ticker bar */}
       <div className="bg-primary text-on-primary text-[10px] uppercase font-mono tracking-widest text-center py-2 relative z-50">
-        Announcing Arbor &amp; Linen Spring cycles • Secure Private Walkthrough slots available
+        Announcing Arbor &amp; Linen Spring cycles • Secure Private Walkthrough
+        slots available
       </div>
 
       {/* Main Top Header Navigation */}
@@ -99,5 +102,5 @@ export default function App() {
         initialResidenceId={selectedResidenceId}
       />
     </div>
-  );
+  )
 }

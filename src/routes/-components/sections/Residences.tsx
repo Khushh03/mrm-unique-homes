@@ -1,34 +1,34 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
-
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { Check, X, ArrowRight, Home, ShieldCheck, Ruler, CalendarRange, DollarSign, ListCollapse } from 'lucide-react';
-import { RESIDENCES_DATA } from '../data';
-import { Residence } from '../types';
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'motion/react'
+import { Check, X, Home, ShieldCheck, Ruler, CalendarRange } from 'lucide-react'
+import { RESIDENCES_DATA } from '#/data'
+import type { Residence } from '#/types'
 
 interface ResidencesProps {
-  onOpenBookingWithId: (id: string) => void;
+  onOpenBookingWithId: (id: string) => void
 }
 
 export function Residences({ onOpenBookingWithId }: ResidencesProps) {
-  const [selectedResidence, setSelectedResidence] = useState<Residence | null>(null);
+  const [selectedResidence, setSelectedResidence] = useState<Residence | null>(
+    null,
+  )
 
   const handleOpenSpecs = (res: Residence) => {
-    setSelectedResidence(res);
-  };
+    setSelectedResidence(res)
+  }
 
   const handleInquireFromSpecs = () => {
     if (selectedResidence) {
-      onOpenBookingWithId(selectedResidence.id);
-      setSelectedResidence(null);
+      onOpenBookingWithId(selectedResidence.id)
+      setSelectedResidence(null)
     }
-  };
+  }
 
   return (
-    <section id="residences" className="max-w-7xl mx-auto px-6 md:px-20 py-24 select-none">
+    <section
+      id="residences"
+      className="max-w-7xl mx-auto px-6 md:px-20 py-24 select-none"
+    >
       {/* Header Block and View All Link */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 border-b border-outline-variant/20 pb-8 gap-4">
         <div>
@@ -51,7 +51,7 @@ export function Residences({ onOpenBookingWithId }: ResidencesProps) {
       {/* Grid of 3 options */}
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 items-stretch pt-4">
         {RESIDENCES_DATA.map((res) => {
-          const isDual = res.id === 'dual'; // Symmetric premium card
+          const isDual = res.id === 'dual' // Symmetric premium card
           return (
             <motion.div
               key={res.id}
@@ -96,7 +96,10 @@ export function Residences({ onOpenBookingWithId }: ResidencesProps) {
                 {/* Features Check List */}
                 <ul className="space-y-3 font-sans text-xs text-on-surface-variant border-t border-gray-150 pt-6 mb-8">
                   {res.specs.map((spec) => (
-                    <li key={spec} className="flex items-center gap-3 text-gray-500 font-light">
+                    <li
+                      key={spec}
+                      className="flex items-center gap-3 text-gray-500 font-light"
+                    >
                       <div className="rounded-full bg-gray-100 p-0.5 text-black border border-gray-200">
                         <Check className="h-3 w-3 stroke-[2.5]" />
                       </div>
@@ -127,14 +130,17 @@ export function Residences({ onOpenBookingWithId }: ResidencesProps) {
                 )}
               </div>
             </motion.div>
-          );
+          )
         })}
       </div>
 
       {/* Specification Slide-Over Panel */}
       <AnimatePresence>
         {selectedResidence && (
-          <div className="fixed inset-0 z-100 overflow-y-auto" id="specs-modal-overlay">
+          <div
+            className="fixed inset-0 z-100 overflow-y-auto"
+            id="specs-modal-overlay"
+          >
             {/* Dark back backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
@@ -170,7 +176,10 @@ export function Residences({ onOpenBookingWithId }: ResidencesProps) {
                       {selectedResidence.name}
                     </h3>
                     <p className="font-serif text-2xl font-bold text-primary">
-                      {selectedResidence.pricePerMonth} <span className="font-sans text-xs text-on-surface-variant">/Bed</span>
+                      {selectedResidence.pricePerMonth}{' '}
+                      <span className="font-sans text-xs text-on-surface-variant">
+                        /Bed
+                      </span>
                     </p>
                   </div>
 
@@ -182,22 +191,34 @@ export function Residences({ onOpenBookingWithId }: ResidencesProps) {
                     <div className="flex items-center gap-2.5">
                       <Ruler className="h-5 w-5 text-soft-sage shrink-0" />
                       <div>
-                        <span className="block text-[8px] uppercase tracking-wider text-on-surface-variant/70">Area</span>
-                        <p className="font-sans text-xs font-semibold text-primary">{selectedResidence.sizeSqFt} Sq Ft</p>
+                        <span className="block text-[8px] uppercase tracking-wider text-on-surface-variant/70">
+                          Area
+                        </span>
+                        <p className="font-sans text-xs font-semibold text-primary">
+                          {selectedResidence.sizeSqFt} Sq Ft
+                        </p>
                       </div>
                     </div>
                     <div className="flex items-center gap-2.5">
                       <CalendarRange className="h-5 w-5 text-soft-sage shrink-0" />
                       <div>
-                        <span className="block text-[8px] uppercase tracking-wider text-on-surface-variant/70">Availability</span>
-                        <p className="font-sans text-xs font-semibold text-primary">{selectedResidence.availableFrom}</p>
+                        <span className="block text-[8px] uppercase tracking-wider text-on-surface-variant/70">
+                          Availability
+                        </span>
+                        <p className="font-sans text-xs font-semibold text-primary">
+                          {selectedResidence.availableFrom}
+                        </p>
                       </div>
                     </div>
                     <div className="flex items-center gap-2.5">
                       <ShieldCheck className="h-5 w-5 text-soft-sage shrink-0" />
                       <div>
-                        <span className="block text-[8px] uppercase tracking-wider text-on-surface-variant/70">Lease cycle</span>
-                        <p className="font-sans text-xs font-semibold text-primary">12 Months</p>
+                        <span className="block text-[8px] uppercase tracking-wider text-on-surface-variant/70">
+                          Lease cycle
+                        </span>
+                        <p className="font-sans text-xs font-semibold text-primary">
+                          12 Months
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -238,5 +259,5 @@ export function Residences({ onOpenBookingWithId }: ResidencesProps) {
         )}
       </AnimatePresence>
     </section>
-  );
+  )
 }
