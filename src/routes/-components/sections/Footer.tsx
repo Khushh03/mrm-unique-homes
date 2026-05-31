@@ -41,7 +41,12 @@ export function Footer() {
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               className="font-serif text-2xl font-bold italic tracking-tight text-primary hover:opacity-90 transition-opacity cursor-pointer outline-none block text-left"
             >
-              MRM Unique Homes
+              <img
+                src={'/logo.jpeg'}
+                alt="MRM Unique Homes"
+                className="h-20 w-auto object-contain"
+              />
+              <span className="mt-2">MRM Unique Homes</span>
             </button>
             <p className="font-sans text-xs md:text-sm text-on-surface-variant max-w-sm leading-relaxed">
               Architectural Integrity &amp; Bespoke Living. Elevating the

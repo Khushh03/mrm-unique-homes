@@ -48,10 +48,10 @@ function Home() {
   return (
     <div className="relative min-h-screen bg-background text-on-surface flex flex-col justify-between selection:bg-primary selection:text-on-primary">
       {/* Absolute top announcement ticker bar */}
-      <div className="bg-primary text-on-primary text-[10px] uppercase font-mono tracking-widest text-center py-2 relative z-50">
+      {/* <div className="bg-primary text-on-primary text-[10px] uppercase font-mono tracking-widest text-center py-2 relative z-50">
         Announcing Arbor &amp; Linen Spring cycles • Secure Private Walkthrough
         slots available
-      </div>
+      </div> */}
 
       {/* Main Top Header Navigation */}
       <Navbar onOpenBooking={handleOpenBooking} />

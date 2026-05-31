@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'motion/react'
-import logo from '#/assets/logo.svg'
 
 interface NavbarProps {
   onOpenBooking: () => void
@@ -69,7 +68,7 @@ export function Navbar({ onOpenBooking }: NavbarProps) {
       id="top-navbar"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-background/90 backdrop-blur-md py-4 shadow-sm border-b border-outline-variant/10'
+          ? 'bg-background backdrop-blur-md py-4 shadow-sm border-b border-outline-variant/10'
           : 'bg-transparent py-6'
       }`}
     >
@@ -82,9 +81,9 @@ export function Navbar({ onOpenBooking }: NavbarProps) {
           className="flex items-center gap-3 cursor-pointer outline-none hover:opacity-90 transition-opacity"
         >
           <img
-            src={logo}
+            src={'/logo.jpeg'}
             alt="MRM Unique Homes"
-            className="h-12 w-auto object-contain"
+            className="h-14 w-auto object-contain"
           />
           <span className="sr-only">MRM Unique Homes</span>
         </button>
