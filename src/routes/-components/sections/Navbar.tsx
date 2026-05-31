@@ -68,7 +68,7 @@ export function Navbar({ onOpenBooking }: NavbarProps) {
       id="top-navbar"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-background backdrop-blur-md py-4 shadow-sm border-b border-outline-variant/10'
+          ? 'bg-background backdrop-blur-md py-4 shadow-sm border-b border-border/10'
           : 'bg-transparent py-6'
       }`}
     >
@@ -100,7 +100,7 @@ export function Navbar({ onOpenBooking }: NavbarProps) {
                 className={`text-xs uppercase tracking-widest font-semibold transition-all duration-300 relative py-1 cursor-pointer outline-none ${
                   isSelected
                     ? 'text-primary'
-                    : 'text-on-surface-variant hover:text-primary'
+                    : 'text-muted-foreground hover:text-primary'
                 }`}
               >
                 {link.label}
@@ -131,7 +131,7 @@ export function Navbar({ onOpenBooking }: NavbarProps) {
         <button
           id="nav-mobile-toggle"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden text-primary p-1.5 rounded-full hover:bg-surface-container transition-colors"
+          className="md:hidden text-primary p-1.5 rounded-full hover:bg-secondary transition-colors"
           aria-label="Toggle navigation menu"
         >
           {mobileMenuOpen ? (
@@ -149,7 +149,7 @@ export function Navbar({ onOpenBooking }: NavbarProps) {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-background border-b border-outline-variant/10 overflow-hidden"
+            className="md:hidden bg-background border-b border-border/10 overflow-hidden"
             id="nav-mobile-menu"
           >
             <div className="px-6 py-6 space-y-4">
@@ -163,21 +163,21 @@ export function Navbar({ onOpenBooking }: NavbarProps) {
                     className={`block w-full text-left text-sm py-2 font-medium transition-colors ${
                       isSelected
                         ? 'text-primary font-semibold'
-                        : 'text-on-surface-variant'
+                        : 'text-muted-foreground'
                     }`}
                   >
                     {link.label}
                   </button>
                 )
               })}
-              <div className="pt-4 border-t border-outline-variant/10">
+              <div className="pt-4 border-t border-border/10">
                 <button
                   id="nav-mobile-tour-btn"
                   onClick={() => {
                     setMobileMenuOpen(false)
                     onOpenBooking()
                   }}
-                  className="w-full text-center bg-primary-container text-on-primary text-xs font-semibold uppercase tracking-widest py-3.5 rounded-full hover:bg-secondary transition-colors"
+                  className="w-full text-center bg-primary/90 text-primary-foreground text-xs font-semibold uppercase tracking-widest py-3.5 rounded-full hover:bg-secondary transition-colors"
                 >
                   Book a Tour
                 </button>

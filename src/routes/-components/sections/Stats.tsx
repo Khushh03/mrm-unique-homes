@@ -60,7 +60,7 @@ export function Stats() {
   ];
 
   return (
-    <section className="border-y border-outline-variant/20 py-12 bg-surface select-none">
+    <section className="border-y border-border/20 py-12 bg-card select-none">
       <div className="max-w-7xl mx-auto px-6 md:px-20">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {statsList.map((stat, idx) => (
@@ -79,10 +79,10 @@ export function Stats() {
               <p className="font-serif text-3xl md:text-4xl font-bold text-primary mb-1">
                 {stat.value}
               </p>
-              <p className="font-sans text-xs font-semibold uppercase tracking-widest text-on-surface-variant group-hover:text-primary duration-300">
+              <p className="font-sans text-xs font-semibold uppercase tracking-widest text-muted-foreground group-hover:text-primary duration-300">
                 {stat.title}
               </p>
-              <p className="hidden lg:block font-sans text-[10px] text-on-surface-variant/70 mt-1 max-w-[150px]">
+              <p className="hidden lg:block font-sans text-[10px] text-muted-foreground/70 mt-1 max-w-[150px]">
                 {stat.desc}
               </p>
             </motion.div>

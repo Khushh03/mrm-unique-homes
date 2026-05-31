@@ -59,13 +59,13 @@ export function ConnectedLiving() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         {/* Left Column Description and Category Selector */}
         <div className="lg:col-span-5 space-y-6 md:space-y-8">
-          <span className="inline-block text-xs font-semibold uppercase tracking-widest text-soft-sage">
+          <span className="inline-block text-xs font-semibold uppercase tracking-widest text-muted-foreground">
             Location Excellence
           </span>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-primary leading-tight">
             Connected Living
           </h2>
-          <p className="font-sans text-sm md:text-base text-on-surface-variant leading-relaxed">
+          <p className="font-sans text-sm md:text-base text-muted-foreground leading-relaxed">
             Situated in a prime locale, MRM Unique Homes offers seamless access
             to the city's finest hubs while maintaining its peaceful,
             sanctuary-like atmosphere.
@@ -73,7 +73,7 @@ export function ConnectedLiving() {
 
           <div className="inline-flex items-center gap-3 rounded-3xl border border-gray-200 bg-white/80 px-4 py-3 shadow-sm">
             <MapPin className="h-4 w-4 text-primary" />
-            <p className="font-sans text-sm text-on-surface leading-relaxed">
+            <p className="font-sans text-sm text-foreground leading-relaxed">
               (C – 124, Anand Niketan, South Motibagh), New Delhi - 110021
             </p>
           </div>
@@ -132,7 +132,7 @@ export function ConnectedLiving() {
                         </span>
                       )}
                     </h4>
-                    <p className="font-sans text-xs text-on-surface-variant mt-1 leading-relaxed">
+                    <p className="font-sans text-xs text-muted-foreground mt-1 leading-relaxed">
                       {cat.desc}
                     </p>
                   </div>
@@ -188,7 +188,7 @@ export function ConnectedLiving() {
 
             {/* Simulated Vector Graph Map */}
             <div
-              className="w-full h-[400px] sm:h-[480px] bg-surface-container rounded-3xl overflow-hidden relative border border-outline-variant/30 flex items-center justify-center cursor-crosshair group shadow-inner"
+              className="w-full h-[400px] sm:h-[480px] bg-secondary rounded-3xl overflow-hidden relative border border-border/30 flex items-center justify-center cursor-crosshair group shadow-inner"
               id="dynamic-vector-map"
             >
               {/* Map Layout Lines (Topographic elements) */}
@@ -196,17 +196,17 @@ export function ConnectedLiving() {
 
               {/* Geographic Ring Paths for modern blueprint appearance */}
               <div
-                className="absolute border border-soft-sage/5 rounded-full w-[150px] h-[150px] animate-pulse pointer-events-none"
+                className="absolute border border-muted-foreground/5 rounded-full w-[150px] h-[150px] animate-pulse pointer-events-none"
                 style={{ animationDuration: '8s' }}
               />
-              <div className="absolute border border-soft-sage/10 rounded-full w-[350px] h-[350px] pointer-events-none" />
-              <div className="absolute border border-soft-sage/5 rounded-full w-[550px] h-[550px] pointer-events-none" />
+              <div className="absolute border border-muted-foreground/10 rounded-full w-[350px] h-[350px] pointer-events-none" />
+              <div className="absolute border border-muted-foreground/5 rounded-full w-[550px] h-[550px] pointer-events-none" />
 
               {/* Grid axes labels */}
-              <div className="absolute left-4 top-4 font-mono text-[9px] text-soft-sage/40">
+              <div className="absolute left-4 top-4 font-mono text-[9px] text-muted-foreground/40">
                 LAT: 40°44'21" N
               </div>
-              <div className="absolute right-4 bottom-4 font-mono text-[9px] text-soft-sage/40">
+              <div className="absolute right-4 bottom-4 font-mono text-[9px] text-muted-foreground/40">
                 LNG: 74°00'12" W
               </div>
 
@@ -219,10 +219,10 @@ export function ConnectedLiving() {
                   className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center animate-ping absolute"
                   style={{ animationDuration: '3s' }}
                 />
-                <div className="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center border-2 border-background shadow-lg relative">
+                <div className="w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center border-2 border-background shadow-lg relative">
                   <MapPin className="h-5 w-5" />
                 </div>
-                <span className="bg-primary text-on-primary text-[8px] uppercase tracking-widest px-2 py-0.5 rounded mt-1 shadow-sm font-semibold whitespace-nowrap">
+                <span className="bg-primary text-primary-foreground text-[8px] uppercase tracking-widest px-2 py-0.5 rounded mt-1 shadow-sm font-semibold whitespace-nowrap">
                   Residency Location
                 </span>
               </div>
@@ -250,10 +250,10 @@ export function ConnectedLiving() {
                     <div
                       className={`p-2 rounded-full border-2 transition-all shadow-md ${
                         isSelected
-                          ? 'bg-primary text-on-primary border-background scale-105 z-20'
+                          ? 'bg-primary text-primary-foreground border-background scale-105 z-20'
                           : isHovered
-                            ? 'bg-surface-container text-primary border-soft-sage'
-                            : 'bg-background text-soft-sage border-outline-variant/30'
+                            ? 'bg-secondary text-primary border-muted-foreground'
+                            : 'bg-background text-muted-foreground border-border/30'
                       }`}
                     >
                       <Icon className="h-3.5 w-3.5" />
@@ -263,7 +263,7 @@ export function ConnectedLiving() {
               })}
 
               {/* Floating detail Card info when a pin or hovering */}
-              <div className="absolute bottom-4 left-4 right-4 bg-background/95 backdrop-blur-md p-4 rounded-xl shadow-lg border border-outline-variant/20 z-20 flex gap-4 items-start select-none">
+              <div className="absolute bottom-4 left-4 right-4 bg-background/95 backdrop-blur-md p-4 rounded-xl shadow-lg border border-border/20 z-20 flex gap-4 items-start select-none">
                 {selectedLandmark ? (
                   <>
                     <div
@@ -279,18 +279,18 @@ export function ConnectedLiving() {
                         <h4 className="font-serif text-sm font-bold text-primary">
                           {selectedLandmark.name}
                         </h4>
-                        <span className="shrink-0 flex items-center gap-1 font-sans text-[10px] font-semibold text-soft-sage bg-surface-container/50 px-2 py-0.5 rounded-full uppercase">
+                        <span className="shrink-0 flex items-center gap-1 font-sans text-[10px] font-semibold text-muted-foreground bg-secondary/50 px-2 py-0.5 rounded-full uppercase">
                           <Navigation className="h-2.5 w-2.5 uppercase text-primary transform rotate-45" />{' '}
                           {selectedLandmark.distance}
                         </span>
                       </div>
-                      <p className="font-sans text-[11px] text-on-surface-variant leading-normal">
+                      <p className="font-sans text-[11px] text-muted-foreground leading-normal">
                         {selectedLandmark.desc}
                       </p>
                     </div>
                   </>
                 ) : (
-                  <p className="text-center w-full font-sans text-xs text-on-surface-variant/70 italic py-2">
+                  <p className="text-center w-full font-sans text-xs text-muted-foreground/70 italic py-2">
                     Click any point beacon on the map grid to view locality
                     details.
                   </p>
@@ -299,7 +299,7 @@ export function ConnectedLiving() {
             </div>
 
             {/* Helpful indicator caption */}
-            <p className="text-center font-sans text-[11px] text-on-surface-variant/60 flex items-center justify-center gap-1">
+            <p className="text-center font-sans text-[11px] text-muted-foreground/60 flex items-center justify-center gap-1">
               <Eye className="h-3 w-3" /> Selected beacon represents distance
               relative to <strong>MRM Unique Homes</strong> sanctuary.
             </p>

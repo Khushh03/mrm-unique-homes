@@ -30,19 +30,19 @@ export function Residences({ onOpenBookingWithId }: ResidencesProps) {
       className="max-w-7xl mx-auto px-6 md:px-20 py-24 select-none"
     >
       {/* Header Block and View All Link */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 border-b border-outline-variant/20 pb-8 gap-4">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 border-b border-border/20 pb-8 gap-4">
         <div>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-primary">
             The Residences
           </h2>
-          <p className="font-sans text-sm md:text-base text-on-surface-variant mt-2 leading-relaxed">
+          <p className="font-sans text-sm md:text-base text-muted-foreground mt-2 leading-relaxed">
             Intentionally designed spaces for distinct ways of living.
           </p>
         </div>
         <button
           id="view-floorplans-btn"
           onClick={() => handleOpenSpecs(RESIDENCES_DATA[1])} // Open default specs info as floor plan preview
-          className="font-sans text-xs md:text-sm font-semibold uppercase tracking-widest text-primary border-b border-primary hover:text-soft-sage hover:border-soft-sage transition-all pb-1 cursor-pointer"
+          className="font-sans text-xs md:text-sm font-semibold uppercase tracking-widest text-primary border-b border-primary hover:text-muted-foreground hover:border-muted-foreground transition-all pb-1 cursor-pointer"
         >
           View All Floorplans
         </button>
@@ -60,10 +60,10 @@ export function Residences({ onOpenBookingWithId }: ResidencesProps) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.6, ease: 'easeOut' }}
-              className={`relative bg-surface rounded-3xl p-8 border hover-zoom-container overflow-hidden flex flex-col justify-between transition-all duration-300 ${
+              className={`relative bg-card rounded-3xl p-8 border hover-zoom-container overflow-hidden flex flex-col justify-between transition-all duration-300 ${
                 isDual
-                  ? 'border-soft-sage/40 shadow-xl lg:scale-103 z-10 bg-surface'
-                  : 'border-outline-variant/20 hover:border-soft-sage/40'
+                  ? 'border-muted-foreground/40 shadow-xl lg:scale-103 z-10 bg-card'
+                  : 'border-border/20 hover:border-muted-foreground/40'
               }`}
             >
               {/* Optional Signature Tag */}
@@ -89,12 +89,12 @@ export function Residences({ onOpenBookingWithId }: ResidencesProps) {
                 <h3 className="font-serif text-2xl font-bold text-primary mb-2">
                   {res.name}
                 </h3>
-                <p className="font-sans text-xs sm:text-sm text-on-surface-variant leading-relaxed mb-6">
+                <p className="font-sans text-xs sm:text-sm text-muted-foreground leading-relaxed mb-6">
                   {res.tagline}
                 </p>
 
                 {/* Features Check List */}
-                <ul className="space-y-3 font-sans text-xs text-on-surface-variant border-t border-gray-150 pt-6 mb-8">
+                <ul className="space-y-3 font-sans text-xs text-muted-foreground border-t border-gray-150 pt-6 mb-8">
                   {res.specs.map((spec) => (
                     <li
                       key={spec}
@@ -155,43 +155,43 @@ export function Residences({ onOpenBookingWithId }: ResidencesProps) {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
-                className="relative bg-background max-w-2xl w-full rounded-2xl overflow-hidden shadow-2xl p-8 md:p-10 border border-outline-variant/20 space-y-6"
+                className="relative bg-background max-w-2xl w-full rounded-2xl overflow-hidden shadow-2xl p-8 md:p-10 border border-border/20 space-y-6"
                 id="specs-modal-panel"
               >
                 {/* Close button button */}
                 <button
                   id="specs-close-btn"
                   onClick={() => setSelectedResidence(null)}
-                  className="absolute right-4 top-4 p-1.5 rounded-full text-on-surface-variant hover:bg-surface-container transition-colors"
+                  className="absolute right-4 top-4 p-1.5 rounded-full text-muted-foreground hover:bg-secondary transition-colors"
                 >
                   <X className="h-5 w-5" />
                 </button>
 
                 <div className="space-y-4">
-                  <span className="font-sans text-[10px] font-semibold uppercase tracking-widest text-soft-sage">
+                  <span className="font-sans text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
                     Architectural Layout Specs
                   </span>
-                  <div className="flex justify-between items-center border-b border-outline-variant/10 pb-4">
+                  <div className="flex justify-between items-center border-b border-border/10 pb-4">
                     <h3 className="font-serif text-3xl font-bold text-primary">
                       {selectedResidence.name}
                     </h3>
                     <p className="font-serif text-2xl font-bold text-primary">
                       {selectedResidence.pricePerMonth}{' '}
-                      <span className="font-sans text-xs text-on-surface-variant">
+                      <span className="font-sans text-xs text-muted-foreground">
                         /Bed
                       </span>
                     </p>
                   </div>
 
-                  <p className="font-sans text-xs md:text-sm leading-relaxed text-on-surface-variant">
+                  <p className="font-sans text-xs md:text-sm leading-relaxed text-muted-foreground">
                     {selectedResidence.description}
                   </p>
 
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 py-4 px-2 bg-surface rounded-xl border border-outline-variant/20">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 py-4 px-2 bg-card rounded-xl border border-border/20">
                     <div className="flex items-center gap-2.5">
-                      <Ruler className="h-5 w-5 text-soft-sage shrink-0" />
+                      <Ruler className="h-5 w-5 text-muted-foreground shrink-0" />
                       <div>
-                        <span className="block text-[8px] uppercase tracking-wider text-on-surface-variant/70">
+                        <span className="block text-[8px] uppercase tracking-wider text-muted-foreground/70">
                           Area
                         </span>
                         <p className="font-sans text-xs font-semibold text-primary">
@@ -200,9 +200,9 @@ export function Residences({ onOpenBookingWithId }: ResidencesProps) {
                       </div>
                     </div>
                     <div className="flex items-center gap-2.5">
-                      <CalendarRange className="h-5 w-5 text-soft-sage shrink-0" />
+                      <CalendarRange className="h-5 w-5 text-muted-foreground shrink-0" />
                       <div>
-                        <span className="block text-[8px] uppercase tracking-wider text-on-surface-variant/70">
+                        <span className="block text-[8px] uppercase tracking-wider text-muted-foreground/70">
                           Availability
                         </span>
                         <p className="font-sans text-xs font-semibold text-primary">
@@ -211,9 +211,9 @@ export function Residences({ onOpenBookingWithId }: ResidencesProps) {
                       </div>
                     </div>
                     <div className="flex items-center gap-2.5">
-                      <ShieldCheck className="h-5 w-5 text-soft-sage shrink-0" />
+                      <ShieldCheck className="h-5 w-5 text-muted-foreground shrink-0" />
                       <div>
-                        <span className="block text-[8px] uppercase tracking-wider text-on-surface-variant/70">
+                        <span className="block text-[8px] uppercase tracking-wider text-muted-foreground/70">
                           Lease cycle
                         </span>
                         <p className="font-sans text-xs font-semibold text-primary">
@@ -227,10 +227,10 @@ export function Residences({ onOpenBookingWithId }: ResidencesProps) {
                     <h4 className="font-serif text-sm font-bold text-primary flex items-center gap-2">
                       <Home className="h-4 w-4" /> Bespoke Specifications
                     </h4>
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-on-surface-variant pl-1">
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-muted-foreground pl-1">
                       {selectedResidence.features.map((feat) => (
                         <li key={feat} className="flex gap-2 items-start">
-                          <Check className="h-4 w-4 text-soft-sage shrink-0 mt-0.5" />
+                          <Check className="h-4 w-4 text-muted-foreground shrink-0 mt-0.5" />
                           <span>{feat}</span>
                         </li>
                       ))}

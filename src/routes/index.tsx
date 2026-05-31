@@ -21,7 +21,9 @@ function Home() {
     string | undefined
   >(undefined)
   const [currentPage, setCurrentPage] = useState<'home' | 'amenities'>(() =>
-    window.location.hash === '#amenities-page' ? 'amenities' : 'home',
+    typeof window !== 'undefined' && window.location.hash === '#amenities-page'
+      ? 'amenities'
+      : 'home',
   )
 
   useEffect(() => {
@@ -46,9 +48,9 @@ function Home() {
   }
 
   return (
-    <div className="relative min-h-screen bg-background text-on-surface flex flex-col justify-between selection:bg-primary selection:text-on-primary">
+    <div className="relative min-h-screen bg-background text-foreground flex flex-col justify-between selection:bg-primary selection:text-primary-foreground">
       {/* Absolute top announcement ticker bar */}
-      {/* <div className="bg-primary text-on-primary text-[10px] uppercase font-mono tracking-widest text-center py-2 relative z-50">
+      {/* <div className="bg-primary text-primary-foreground text-[10px] uppercase font-mono tracking-widest text-center py-2 relative z-50">
         Announcing Arbor &amp; Linen Spring cycles • Secure Private Walkthrough
         slots available
       </div> */}

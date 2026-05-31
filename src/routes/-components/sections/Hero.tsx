@@ -60,7 +60,7 @@ export function Hero() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         {/* Left Column Description */}
         <div className="lg:col-span-5 space-y-6 md:space-y-8">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-white border border-outline-variant/40 rounded-full shadow-sm">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-white border border-border/40 rounded-full shadow-sm">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
             <span className="text-[10px] uppercase tracking-widest font-bold text-gray-500">
               Suite Bookings Open
@@ -70,7 +70,7 @@ export function Hero() {
             Where design meets <br />
             <span className="text-gray-400">daily life.</span>
           </h1>
-          <p className="font-sans text-sm md:text-base text-on-surface-variant leading-relaxed max-w-md">
+          <p className="font-sans text-sm md:text-base text-muted-foreground leading-relaxed max-w-md">
             A precision-engineered sanctuary designed for creators who demand
             clarity, speed, and an uncompromising aesthetic focus.
           </p>
@@ -86,7 +86,7 @@ export function Hero() {
             <button
               id="hero-story"
               onClick={() => setShowStoryModal(true)}
-              className="bg-white border border-outline-variant text-black text-xs font-semibold uppercase tracking-widest py-4 px-8 rounded-xl hover:bg-gray-50 transition-all transform active:scale-95 duration-200 cursor-pointer"
+              className="bg-white border border-border text-black text-xs font-semibold uppercase tracking-widest py-4 px-8 rounded-xl hover:bg-gray-50 transition-all transform active:scale-95 duration-200 cursor-pointer"
             >
               Our Story
             </button>
@@ -95,7 +95,7 @@ export function Hero() {
 
         {/* Right Column Custom Slideshow */}
         <div className="lg:col-span-7">
-          <div className="relative h-[480px] sm:h-[580px] w-full rounded-2xl overflow-hidden shadow-2xl group border border-outline-variant/10">
+          <div className="relative h-[480px] sm:h-[580px] w-full rounded-2xl overflow-hidden shadow-2xl group border border-border/10">
             {/* Slide Images */}
             <AnimatePresence mode="wait">
               <motion.img
@@ -121,12 +121,12 @@ export function Hero() {
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.4 }}
-                className="bg-background/95 backdrop-blur-md p-5 sm:p-6 rounded-xl shadow-xl max-w-sm border border-outline-variant/20"
+                className="bg-background/95 backdrop-blur-md p-5 sm:p-6 rounded-xl shadow-xl max-w-sm border border-border/20"
               >
                 <h3 className="font-serif text-lg sm:text-xl font-semibold text-primary mb-1">
                   {slides[currentSlide].title}
                 </h3>
-                <p className="font-sans text-xs text-on-surface-variant leading-relaxed">
+                <p className="font-sans text-xs text-muted-foreground leading-relaxed">
                   {slides[currentSlide].desc}
                 </p>
               </motion.div>
@@ -136,7 +136,7 @@ export function Hero() {
                 <button
                   id="hero-slider-prev"
                   onClick={handlePrev}
-                  className="p-3.5 rounded-full bg-background/90 hover:bg-background text-primary shadow-lg border border-outline-variant/10 transition-transform active:scale-90 duration-150"
+                  className="p-3.5 rounded-full bg-background/90 hover:bg-background text-primary shadow-lg border border-border/10 transition-transform active:scale-90 duration-150"
                   aria-label="Previous Slide"
                 >
                   <ChevronLeft className="h-5 w-5" />
@@ -144,7 +144,7 @@ export function Hero() {
                 <button
                   id="hero-slider-next"
                   onClick={handleNext}
-                  className="p-3.5 rounded-full bg-background/90 hover:bg-background text-primary shadow-lg border border-outline-variant/10 transition-transform active:scale-90 duration-150"
+                  className="p-3.5 rounded-full bg-background/90 hover:bg-background text-primary shadow-lg border border-border/10 transition-transform active:scale-90 duration-150"
                   aria-label="Next Slide"
                 >
                   <ChevronRight className="h-5 w-5" />
@@ -174,32 +174,32 @@ export function Hero() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
-                className="relative bg-background max-w-2xl w-full rounded-2xl overflow-hidden shadow-2xl p-8 md:p-12 border border-outline-variant/20"
+                className="relative bg-background max-w-2xl w-full rounded-2xl overflow-hidden shadow-2xl p-8 md:p-12 border border-border/20"
                 id="story-modal-panel"
               >
                 <button
                   onClick={() => setShowStoryModal(false)}
-                  className="absolute right-4 top-4 p-1.5 rounded-full text-on-surface-variant hover:bg-surface-container transition-colors"
+                  className="absolute right-4 top-4 p-1.5 rounded-full text-muted-foreground hover:bg-secondary transition-colors"
                 >
                   <X className="h-5 w-5" />
                 </button>
 
                 <div className="space-y-6">
-                  <span className="text-xs font-semibold uppercase tracking-widest text-soft-sage block">
+                  <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground block">
                     Our Design Thesis
                   </span>
                   <h3 className="font-serif text-3xl font-bold text-primary">
                     Understatement as the Ultimate Form of Craft.
                   </h3>
 
-                  <div className="aspect-video relative rounded-lg overflow-hidden bg-primary-container flex items-center justify-center border border-outline-variant/20">
+                  <div className="aspect-video relative rounded-lg overflow-hidden bg-primary/90 flex items-center justify-center border border-border/20">
                     <img
                       src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSjahhPK7GGoYfa8TgoFvnDWvE3mFk_XSs6vsn1BFxVxGuZD_9GE3bWj__4Iv6Pm7dzxN7-d8qFKGmxERGPm7HKMJmH9pps9vgi-GbaNorfsYDgerYVFbFTHM19gMfJqFuZnq31p83CUkCcrDTIBsVx8Uw7BhMCSIqIAmrO5h8ITVf-_M5TaXPt1_n2CQmVDTRvew8NRRHlfhItGQmIKZfRNKnGWn7mtXOhlyPyNroSEbZrLn9QIM4KyD2be5k5-LiFj4RCPo9VYbe"
                       alt="Story Concept drawing"
                       className="absolute inset-0 w-full h-full object-cover opacity-30"
                     />
                     <div className="relative text-center p-6 space-y-3">
-                      <div className="mx-auto w-12 h-12 rounded-full bg-background flex items-center justify-center text-primary shadow-lg cursor-pointer hover:bg-surface-container transition-transform hover:scale-105 active:scale-95">
+                      <div className="mx-auto w-12 h-12 rounded-full bg-background flex items-center justify-center text-primary shadow-lg cursor-pointer hover:bg-secondary transition-transform hover:scale-105 active:scale-95">
                         <Play className="h-5 w-5 fill-current" />
                       </div>
                       <p className="text-xs font-mono text-background font-medium uppercase tracking-wider">
@@ -208,7 +208,7 @@ export function Hero() {
                     </div>
                   </div>
 
-                  <p className="font-sans text-sm text-on-surface-variant leading-relaxed">
+                  <p className="font-sans text-sm text-muted-foreground leading-relaxed">
                     At <strong>MRM Unique Homes</strong>, we believe modern
                     architecture shouldn't dominate. It should recede, providing
                     a quiet frame for the natural rhythms of daily life. Our
@@ -217,9 +217,9 @@ export function Hero() {
                     panels into a cohesive sanctuary.
                   </p>
 
-                  <div className="grid grid-cols-3 gap-4 pt-4 border-t border-outline-variant/10">
+                  <div className="grid grid-cols-3 gap-4 pt-4 border-t border-border/10">
                     <div className="space-y-1">
-                      <span className="block font-mono text-xs text-soft-sage uppercase">
+                      <span className="block font-mono text-xs text-muted-foreground uppercase">
                         Integration
                       </span>
                       <p className="font-serif text-sm font-semibold text-primary">
@@ -227,7 +227,7 @@ export function Hero() {
                       </p>
                     </div>
                     <div className="space-y-1">
-                      <span className="block font-mono text-xs text-soft-sage uppercase">
+                      <span className="block font-mono text-xs text-muted-foreground uppercase">
                         Acoustics
                       </span>
                       <p className="font-serif text-sm font-semibold text-primary">
@@ -235,7 +235,7 @@ export function Hero() {
                       </p>
                     </div>
                     <div className="space-y-1">
-                      <span className="block font-mono text-xs text-soft-sage uppercase">
+                      <span className="block font-mono text-xs text-muted-foreground uppercase">
                         Material
                       </span>
                       <p className="font-serif text-sm font-semibold text-primary">
@@ -247,7 +247,7 @@ export function Hero() {
                   <div className="pt-2">
                     <button
                       onClick={() => setShowStoryModal(false)}
-                      className="w-full text-center bg-primary text-on-primary font-sans text-xs font-semibold uppercase tracking-widest py-3 rounded-lg hover:bg-primary-container transition-colors"
+                      className="w-full text-center bg-primary text-primary-foreground font-sans text-xs font-semibold uppercase tracking-widest py-3 rounded-lg hover:bg-primary/90 transition-colors"
                     >
                       Continue Reading Journal
                     </button>

@@ -89,7 +89,7 @@ export function BookingModal({
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ type: 'spring', duration: 0.5 }}
-              className="relative w-full max-w-lg overflow-hidden rounded-2xl bg-background text-left shadow-2xl border border-outline-variant/30"
+              className="relative w-full max-w-lg overflow-hidden rounded-2xl bg-background text-left shadow-2xl border border-border/30"
               id="booking-modal-panel"
             >
               {/* Top accent line */}
@@ -99,7 +99,7 @@ export function BookingModal({
               <button
                 id="modal-close-btn"
                 onClick={resetForm}
-                className="absolute right-4 top-4 rounded-full p-1.5 text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors"
+                className="absolute right-4 top-4 rounded-full p-1.5 text-muted-foreground hover:bg-secondary hover:text-primary transition-colors"
               >
                 <X className="h-5 w-5" />
               </button>
@@ -107,20 +107,20 @@ export function BookingModal({
               <div className="p-8 md:p-10">
                 {step === 1 && (
                   <div>
-                    <span className="font-sans text-xs font-semibold uppercase tracking-widest text-soft-sage">
+                    <span className="font-sans text-xs font-semibold uppercase tracking-widest text-muted-foreground">
                       Private Invitation
                     </span>
                     <h3 className="font-serif text-2xl font-semibold tracking-tight text-primary mt-1 mb-4">
                       Initiate Tour Consultation
                     </h3>
-                    <p className="font-sans text-sm leading-relaxed text-on-surface-variant mb-6">
+                    <p className="font-sans text-sm leading-relaxed text-muted-foreground mb-6">
                       Schedule a private guided walkthrough or online meeting
                       with our boutique housing concierge.
                     </p>
 
                     <div className="space-y-4">
                       <div>
-                        <label className="block font-sans text-xs font-medium uppercase tracking-wider text-on-surface-variant mb-2">
+                        <label className="block font-sans text-xs font-medium uppercase tracking-wider text-muted-foreground mb-2">
                           Select Suite Tier
                         </label>
                         <div className="grid grid-cols-3 gap-2">
@@ -162,7 +162,7 @@ export function BookingModal({
                 {step === 2 && (
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
-                      <span className="font-sans text-xs font-semibold uppercase tracking-widest text-soft-sage">
+                      <span className="font-sans text-xs font-semibold uppercase tracking-widest text-muted-foreground">
                         Tier Preselected: {selectedResidence?.name}
                       </span>
                       <h3 className="font-serif text-2xl font-semibold tracking-tight text-primary mt-1 mb-6">
@@ -172,11 +172,11 @@ export function BookingModal({
 
                     <div className="space-y-4">
                       <div>
-                        <label className="block font-sans text-xs font-medium uppercase tracking-wider text-on-surface-variant mb-1">
+                        <label className="block font-sans text-xs font-medium uppercase tracking-wider text-muted-foreground mb-1">
                           Full Name
                         </label>
                         <div className="relative">
-                          <User className="absolute left-3.5 top-3.5 h-4 w-4 text-soft-sage" />
+                          <User className="absolute left-3.5 top-3.5 h-4 w-4 text-muted-foreground" />
                           <input
                             id="modal-input-name"
                             required
@@ -184,18 +184,18 @@ export function BookingModal({
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                             placeholder="John Carter"
-                            className="w-full rounded-lg border border-outline-variant/50 bg-surface px-10 py-3 font-sans text-sm text-on-surface placeholder:text-outline/70 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
+                            className="w-full rounded-lg border border-border/50 bg-card px-10 py-3 font-sans text-sm text-foreground placeholder:text-muted-foreground/70 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
                           />
                         </div>
                       </div>
 
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <div>
-                          <label className="block font-sans text-xs font-medium uppercase tracking-wider text-on-surface-variant mb-1">
+                          <label className="block font-sans text-xs font-medium uppercase tracking-wider text-muted-foreground mb-1">
                             Phone Number
                           </label>
                           <div className="relative">
-                            <Phone className="absolute left-3.5 top-3.5 h-4 w-4 text-soft-sage" />
+                            <Phone className="absolute left-3.5 top-3.5 h-4 w-4 text-muted-foreground" />
                             <input
                               id="modal-input-phone"
                               required
@@ -203,17 +203,17 @@ export function BookingModal({
                               value={phone}
                               onChange={(e) => setPhone(e.target.value)}
                               placeholder="+1 (555) 123-4567"
-                              className="w-full rounded-lg border border-outline-variant/50 bg-surface px-10 py-3 font-sans text-sm text-on-surface placeholder:text-outline/70 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
+                              className="w-full rounded-lg border border-border/50 bg-card px-10 py-3 font-sans text-sm text-foreground placeholder:text-muted-foreground/70 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
                             />
                           </div>
                         </div>
 
                         <div>
-                          <label className="block font-sans text-xs font-medium uppercase tracking-wider text-on-surface-variant mb-1">
+                          <label className="block font-sans text-xs font-medium uppercase tracking-wider text-muted-foreground mb-1">
                             Email Address
                           </label>
                           <div className="relative">
-                            <Mail className="absolute left-3.5 top-3.5 h-4 w-4 text-soft-sage" />
+                            <Mail className="absolute left-3.5 top-3.5 h-4 w-4 text-muted-foreground" />
                             <input
                               id="modal-input-email"
                               required
@@ -221,7 +221,7 @@ export function BookingModal({
                               value={email}
                               onChange={(e) => setEmail(e.target.value)}
                               placeholder="john@example.com"
-                              className="w-full rounded-lg border border-outline-variant/50 bg-surface px-10 py-3 font-sans text-sm text-on-surface placeholder:text-outline/70 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
+                              className="w-full rounded-lg border border-border/50 bg-card px-10 py-3 font-sans text-sm text-foreground placeholder:text-muted-foreground/70 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
                             />
                           </div>
                         </div>
@@ -229,33 +229,33 @@ export function BookingModal({
 
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <div>
-                          <label className="block font-sans text-xs font-medium uppercase tracking-wider text-on-surface-variant mb-1">
+                          <label className="block font-sans text-xs font-medium uppercase tracking-wider text-muted-foreground mb-1">
                             Guided Date
                           </label>
                           <div className="relative">
-                            <Calendar className="absolute left-3.5 top-3.5 h-4 w-4 text-soft-sage pointer-events-none" />
+                            <Calendar className="absolute left-3.5 top-3.5 h-4 w-4 text-muted-foreground pointer-events-none" />
                             <input
                               id="modal-input-date"
                               required
                               type="date"
                               value={preferredDate}
                               onChange={(e) => setPreferredDate(e.target.value)}
-                              className="w-full rounded-lg border border-outline-variant/50 bg-surface px-10 py-3 font-sans text-sm text-on-surface placeholder:text-outline/70 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
+                              className="w-full rounded-lg border border-border/50 bg-card px-10 py-3 font-sans text-sm text-foreground placeholder:text-muted-foreground/70 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
                             />
                           </div>
                         </div>
 
                         <div>
-                          <label className="block font-sans text-xs font-medium uppercase tracking-wider text-on-surface-variant mb-1">
+                          <label className="block font-sans text-xs font-medium uppercase tracking-wider text-muted-foreground mb-1">
                             Preferred Time
                           </label>
                           <div className="relative">
-                            <Clock className="absolute left-3.5 top-3.5 h-4 w-4 text-soft-sage pointer-events-none" />
+                            <Clock className="absolute left-3.5 top-3.5 h-4 w-4 text-muted-foreground pointer-events-none" />
                             <select
                               id="modal-input-time"
                               value={preferredTime}
                               onChange={(e) => setPreferredTime(e.target.value)}
-                              className="w-full rounded-lg border border-outline-variant/50 bg-surface px-10 py-3 font-sans text-sm text-on-surface placeholder:text-outline/70 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors appearance-none"
+                              className="w-full rounded-lg border border-border/50 bg-card px-10 py-3 font-sans text-sm text-foreground placeholder:text-muted-foreground/70 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors appearance-none"
                             >
                               <option value="10:00 AM">
                                 10:00 AM – Morning
@@ -275,7 +275,7 @@ export function BookingModal({
                       </div>
 
                       <div>
-                        <label className="block font-sans text-xs font-medium uppercase tracking-wider text-on-surface-variant mb-1">
+                        <label className="block font-sans text-xs font-medium uppercase tracking-wider text-muted-foreground mb-1">
                           Tailoring Notes (Optional)
                         </label>
                         <textarea
@@ -284,7 +284,7 @@ export function BookingModal({
                           value={additionalNotes}
                           onChange={(e) => setAdditionalNotes(e.target.value)}
                           placeholder="e.g. wheelchair access, specific organic bedding requirements..."
-                          className="w-full rounded-lg border border-outline-variant/50 bg-surface p-3.5 font-sans text-sm text-on-surface placeholder:text-outline/70 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
+                          className="w-full rounded-lg border border-border/50 bg-card p-3.5 font-sans text-sm text-foreground placeholder:text-muted-foreground/70 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
                         />
                       </div>
                     </div>
@@ -320,30 +320,30 @@ export function BookingModal({
 
                 {step === 3 && (
                   <div className="text-center py-6">
-                    <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-surface-container text-primary mb-6">
+                    <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-secondary text-primary mb-6">
                       <CheckCircle2 className="h-10 w-10 text-primary" />
                     </div>
-                    <span className="font-sans text-xs font-semibold uppercase tracking-widest text-soft-sage">
+                    <span className="font-sans text-xs font-semibold uppercase tracking-widest text-muted-foreground">
                       Submission Received
                     </span>
                     <h3 className="font-serif text-3xl font-semibold tracking-tight text-primary mt-1 mb-4">
                       Walkthrough Curated
                     </h3>
-                    <p className="font-sans text-sm leading-relaxed text-on-surface-variant max-w-sm mx-auto mb-8">
+                    <p className="font-sans text-sm leading-relaxed text-muted-foreground max-w-sm mx-auto mb-8">
                       Thank you,{' '}
-                      <strong className="text-on-surface">{name}</strong>. An
+                      <strong className="text-foreground">{name}</strong>. An
                       appointments concierge will address your inquiry for{' '}
-                      <strong className="text-on-surface">
+                      <strong className="text-foreground">
                         {selectedResidence?.name}
                       </strong>
                       . We will contact you at{' '}
-                      <strong className="text-on-surface">{phone}</strong>{' '}
+                      <strong className="text-foreground">{phone}</strong>{' '}
                       shortly.
                     </p>
 
-                    <div className="rounded-xl border border-outline-variant/20 bg-surface p-4 text-left space-y-3 mb-8 max-w-sm mx-auto">
-                      <div className="flex items-center gap-3 text-xs text-on-surface-variant">
-                        <Building className="h-4 w-4 text-soft-sage shrink-0" />
+                    <div className="rounded-xl border border-border/20 bg-card p-4 text-left space-y-3 mb-8 max-w-sm mx-auto">
+                      <div className="flex items-center gap-3 text-xs text-muted-foreground">
+                        <Building className="h-4 w-4 text-muted-foreground shrink-0" />
                         <span>
                           Residency Tier:{' '}
                           <strong className="text-primary">
@@ -351,8 +351,8 @@ export function BookingModal({
                           </strong>
                         </span>
                       </div>
-                      <div className="flex items-center gap-3 text-xs text-on-surface-variant">
-                        <Calendar className="h-4 w-4 text-soft-sage shrink-0" />
+                      <div className="flex items-center gap-3 text-xs text-muted-foreground">
+                        <Calendar className="h-4 w-4 text-muted-foreground shrink-0" />
                         <span>
                           Date:{' '}
                           <strong>
@@ -360,8 +360,8 @@ export function BookingModal({
                           </strong>
                         </span>
                       </div>
-                      <div className="flex items-center gap-3 text-xs text-on-surface-variant">
-                        <ShieldCheck className="h-4 w-4 text-soft-sage shrink-0" />
+                      <div className="flex items-center gap-3 text-xs text-muted-foreground">
+                        <ShieldCheck className="h-4 w-4 text-muted-foreground shrink-0" />
                         <span>
                           Email Copy: <strong>{email}</strong>
                         </span>
@@ -371,7 +371,7 @@ export function BookingModal({
                     <button
                       id="modal-done-btn"
                       onClick={resetForm}
-                      className="w-full max-w-xs rounded-lg bg-primary py-3 px-6 font-sans text-sm font-semibold text-on-primary hover:bg-primary-container transition-colors"
+                      className="w-full max-w-xs rounded-lg bg-primary py-3 px-6 font-sans text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-colors"
                     >
                       Return to Journal
                     </button>

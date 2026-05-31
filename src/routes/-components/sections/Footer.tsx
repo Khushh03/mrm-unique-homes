@@ -31,7 +31,7 @@ export function Footer() {
   }
 
   return (
-    <footer className="bg-surface-container w-full pt-20 pb-12 border-t border-outline-variant/10 select-none">
+    <footer className="bg-secondary w-full pt-20 pb-12 border-t border-border/10 select-none">
       <div className="max-w-7xl mx-auto px-6 md:px-20">
         {/* Main Grid split */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
@@ -48,7 +48,7 @@ export function Footer() {
               />
               <span className="mt-2">MRM Unique Homes</span>
             </button>
-            <p className="font-sans text-xs md:text-sm text-on-surface-variant max-w-sm leading-relaxed">
+            <p className="font-sans text-xs md:text-sm text-muted-foreground max-w-sm leading-relaxed">
               Architectural Integrity &amp; Bespoke Living. Elevating the
               standard of modern residency.
             </p>
@@ -63,7 +63,7 @@ export function Footer() {
               <li>
                 <button
                   onClick={() => scrollToId('residences')}
-                  className="font-sans text-on-surface-variant hover:text-primary transition-colors cursor-pointer"
+                  className="font-sans text-muted-foreground hover:text-primary transition-colors cursor-pointer"
                 >
                   The Residences
                 </button>
@@ -71,7 +71,7 @@ export function Footer() {
               <li>
                 <button
                   onClick={() => scrollToId('amenities')}
-                  className="font-sans text-on-surface-variant hover:text-primary transition-colors cursor-pointer"
+                  className="font-sans text-muted-foreground hover:text-primary transition-colors cursor-pointer"
                 >
                   Curated Amenities
                 </button>
@@ -79,7 +79,7 @@ export function Footer() {
               <li>
                 <button
                   onClick={() => scrollToId('connected-living')}
-                  className="font-sans text-on-surface-variant hover:text-primary transition-colors cursor-pointer"
+                  className="font-sans text-muted-foreground hover:text-primary transition-colors cursor-pointer"
                 >
                   Neighborhood Locality
                 </button>
@@ -87,7 +87,7 @@ export function Footer() {
               <li>
                 <button
                   onClick={() => scrollToId('home')}
-                  className="font-sans text-on-surface-variant hover:text-primary transition-colors cursor-pointer"
+                  className="font-sans text-muted-foreground hover:text-primary transition-colors cursor-pointer"
                 >
                   Our Philosophy
                 </button>
@@ -102,26 +102,26 @@ export function Footer() {
             </h4>
             <ul className="space-y-3 text-xs">
               <li className="flex items-center gap-2">
-                <Mail className="h-4 w-4 text-soft-sage shrink-0" />
+                <Mail className="h-4 w-4 text-muted-foreground shrink-0" />
                 <a
                   href="mailto:concierge@mrmhomes.com"
-                  className="font-sans text-on-surface-variant hover:text-primary transition-colors"
+                  className="font-sans text-muted-foreground hover:text-primary transition-colors"
                 >
                   concierge@mrmhomes.com
                 </a>
               </li>
               <li className="flex items-center gap-2">
-                <Phone className="h-4 w-4 text-soft-sage shrink-0" />
+                <Phone className="h-4 w-4 text-muted-foreground shrink-0" />
                 <a
                   href="tel:+1234567890"
-                  className="font-sans text-on-surface-variant hover:text-primary transition-colors"
+                  className="font-sans text-muted-foreground hover:text-primary transition-colors"
                 >
                   +1 (234) 567-890
                 </a>
               </li>
               <li className="flex items-start gap-2">
-                <MapPin className="h-4 w-4 text-soft-sage shrink-0 mt-0.5" />
-                <p className="font-sans text-on-surface-variant leading-relaxed text-xs">
+                <MapPin className="h-4 w-4 text-muted-foreground shrink-0 mt-0.5" />
+                <p className="font-sans text-muted-foreground leading-relaxed text-xs">
                   (C – 124, Anand Niketan, South Motibagh), New Delhi - 110021
                 </p>
               </li>
@@ -156,7 +156,7 @@ export function Footer() {
         </div>
 
         {/* Footer Base */}
-        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-outline-variant/10 text-[11px] text-on-surface-variant/70 gap-4">
+        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-border/10 text-[11px] text-muted-foreground/70 gap-4">
           <p className="font-sans text-center md:text-left">
             © {new Date().getFullYear()} MRM Unique Homes. Architectural
             Integrity &amp; Bespoke Living. All private rights reserved.

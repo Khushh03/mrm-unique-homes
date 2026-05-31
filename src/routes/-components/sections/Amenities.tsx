@@ -87,7 +87,7 @@ export function Amenities({
         <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-primary">
           Curated Amenities
         </h2>
-        <p className="font-sans text-sm md:text-base text-on-surface-variant max-w-xl mx-auto leading-relaxed">
+        <p className="font-sans text-sm md:text-base text-muted-foreground max-w-xl mx-auto leading-relaxed">
           Beyond the private quarters, MRM Unique Homes offers spaces designed
           to elevate daily rituals and foster a sense of community.
         </p>
@@ -106,7 +106,7 @@ export function Amenities({
               viewport={{ once: true, margin: '-50px' }}
               transition={{ delay: index * 0.08, duration: 0.5 }}
               onClick={() => setSelectedAmenity(amenity)}
-              className="group flex flex-col items-center text-center cursor-pointer p-4 rounded-xl hover:bg-surface transition-all duration-300"
+              className="group flex flex-col items-center text-center cursor-pointer p-4 rounded-xl hover:bg-card transition-all duration-300"
             >
               {/* Icon Container with subtle ring */}
               <div className="w-16 h-16 rounded-full border border-gray-200 flex items-center justify-center mb-6 bg-white text-black group-hover:bg-black group-hover:text-white group-hover:border-black transition-all duration-300 transform group-hover:scale-105 shadow-sm">
@@ -117,14 +117,14 @@ export function Amenities({
               <h3 className="font-serif text-xl font-semibold text-primary mb-3">
                 {amenity.name}
               </h3>
-              <p className="font-sans text-xs md:text-sm text-on-surface-variant leading-relaxed max-w-xs">
+              <p className="font-sans text-xs md:text-sm text-muted-foreground leading-relaxed max-w-xs">
                 {amenity.description}
               </p>
 
               {/* Expand Link */}
               <button
                 id={`amenity-more-${amenity.id}`}
-                className="mt-4 flex items-center gap-1.5 font-sans text-xs font-semibold uppercase tracking-wider text-soft-sage hover:text-primary transition-all pointer-events-none"
+                className="mt-4 flex items-center gap-1.5 font-sans text-xs font-semibold uppercase tracking-wider text-muted-foreground hover:text-primary transition-all pointer-events-none"
               >
                 Learn More <ArrowRight className="h-3 w-3" />
               </button>
@@ -181,14 +181,14 @@ export function Amenities({
                 initial={{ opacity: 0, scale: 0.95, y: 15 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: 15 }}
-                className="relative bg-background max-w-3xl w-full rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row border border-outline-variant/20"
+                className="relative bg-background max-w-3xl w-full rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row border border-border/20"
                 id="amenity-modal-panel"
               >
                 {/* Close Button Button */}
                 <button
                   id="amenity-modal-close"
                   onClick={closeModal}
-                  className="absolute right-4 top-4 p-1.5 rounded-full bg-background/80 text-primary hover:bg-surface-container transition-colors z-10"
+                  className="absolute right-4 top-4 p-1.5 rounded-full bg-background/80 text-primary hover:bg-secondary transition-colors z-10"
                 >
                   <X className="h-5 w-5" />
                 </button>
@@ -202,8 +202,8 @@ export function Amenities({
                     className="absolute inset-0 w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent" />
-                  <div className="absolute bottom-6 left-6 right-6 text-on-primary">
-                    <span className="text-[10px] uppercase font-mono tracking-widest text-soft-sage">
+                  <div className="absolute bottom-6 left-6 right-6 text-primary-foreground">
+                    <span className="text-[10px] uppercase font-mono tracking-widest text-muted-foreground">
                       Arbor &amp; Linen Features
                     </span>
                     <h4 className="font-serif text-2xl font-semibold mt-1">
@@ -218,16 +218,16 @@ export function Amenities({
                     <h5 className="font-serif text-lg font-bold text-primary mb-2">
                       Architectural Framing
                     </h5>
-                    <p className="font-sans text-xs md:text-sm text-on-surface-variant leading-relaxed">
+                    <p className="font-sans text-xs md:text-sm text-muted-foreground leading-relaxed">
                       {selectedAmenity.detailText}
                     </p>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-4 py-3 border-y border-outline-variant/20">
+                  <div className="grid grid-cols-2 gap-4 py-3 border-y border-border/20">
                     <div className="flex items-center gap-2.5">
-                      <Clock className="h-4.5 w-4.5 text-soft-sage shrink-0" />
+                      <Clock className="h-4.5 w-4.5 text-muted-foreground shrink-0" />
                       <div>
-                        <span className="block text-[9px] uppercase font-mono text-on-surface-variant/70">
+                        <span className="block text-[9px] uppercase font-mono text-muted-foreground/70">
                           Hours
                         </span>
                         <span className="font-sans text-xs font-semibold text-primary">
@@ -236,9 +236,9 @@ export function Amenities({
                       </div>
                     </div>
                     <div className="flex items-center gap-2.5">
-                      <Users className="h-4.5 w-4.5 text-soft-sage shrink-0" />
+                      <Users className="h-4.5 w-4.5 text-muted-foreground shrink-0" />
                       <div>
-                        <span className="block text-[9px] uppercase font-mono text-on-surface-variant/70">
+                        <span className="block text-[9px] uppercase font-mono text-muted-foreground/70">
                           Capacity
                         </span>
                         <span className="font-sans text-xs font-semibold text-primary">
@@ -301,13 +301,13 @@ export function Amenities({
                     <motion.div
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="rounded-lg border border-soft-sage/30 bg-surface-container/20 p-4 text-center space-y-2 pt-4"
+                      className="rounded-lg border border-muted-foreground/30 bg-secondary/20 p-4 text-center space-y-2 pt-4"
                     >
-                      <ShieldCheck className="h-8 w-8 text-soft-sage mx-auto" />
+                      <ShieldCheck className="h-8 w-8 text-muted-foreground mx-auto" />
                       <p className="font-serif text-sm font-semibold text-primary">
                         Reservation Confirmed
                       </p>
-                      <p className="font-sans text-[11px] text-on-surface-variant max-w-xs mx-auto">
+                      <p className="font-sans text-[11px] text-muted-foreground max-w-xs mx-auto">
                         Your pass has been synced for{' '}
                         <strong>{selectedAmenity.name}</strong> on{' '}
                         <strong>{reservationDate}</strong> at{' '}
@@ -317,7 +317,7 @@ export function Amenities({
                       <button
                         type="button"
                         onClick={resetReservation}
-                        className="text-xs font-semibold uppercase text-soft-sage hover:text-primary tracking-wider"
+                        className="text-xs font-semibold uppercase text-muted-foreground hover:text-primary tracking-wider"
                       >
                         Book another
                       </button>

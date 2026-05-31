@@ -17,7 +17,7 @@ export function FaqSection() {
     >
       {/* Title */}
       <div className="text-center mb-16 space-y-2">
-        <span className="text-xs font-semibold uppercase tracking-widest text-soft-sage">
+        <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
           Inquiry Assistant
         </span>
         <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight text-primary">
@@ -26,13 +26,13 @@ export function FaqSection() {
       </div>
 
       {/* Accordion List */}
-      <div className="space-y-4 border-t border-outline-variant/20 pt-6">
+      <div className="space-y-4 border-t border-border/20 pt-6">
         {FAQ_DATA.map((faq) => {
           const isOpen = openId === faq.id
           return (
             <div
               key={faq.id}
-              className="border-b border-outline-variant/10 pb-6"
+              className="border-b border-border/10 pb-6"
               id={`faq-item-${faq.id}`}
             >
               {/* Question Header */}
@@ -59,7 +59,7 @@ export function FaqSection() {
                     transition={{ duration: 0.35, ease: 'easeInOut' }}
                     className="overflow-hidden"
                   >
-                    <div className="pt-4 pr-12 text-xs md:text-sm text-on-surface-variant font-sans leading-relaxed tracking-normal">
+                    <div className="pt-4 pr-12 text-xs md:text-sm text-muted-foreground font-sans leading-relaxed tracking-normal">
                       {faq.answer}
                     </div>
                   </motion.div>

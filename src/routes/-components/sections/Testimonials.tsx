@@ -81,7 +81,7 @@ export function Testimonials() {
           <h2 className="mt-6 font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-primary">
             What Our Residents Say
           </h2>
-          <p className="mt-4 text-sm sm:text-base text-on-surface-variant max-w-2xl mx-auto leading-7">
+          <p className="mt-4 text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto leading-7">
             Trusted by girls seeking a premium, secure and comfortable stay in
             New Delhi.
           </p>
@@ -121,7 +121,7 @@ export function Testimonials() {
                         <h3 className="text-lg font-semibold text-primary">
                           {review.name}
                         </h3>
-                        <p className="text-sm text-on-surface-variant">
+                        <p className="text-sm text-muted-foreground">
                           {review.role}
                         </p>
                       </div>
@@ -137,11 +137,11 @@ export function Testimonials() {
                     ))}
                   </div>
 
-                  <p className="mt-5 text-sm leading-7 text-on-surface-variant">
+                  <p className="mt-5 text-sm leading-7 text-muted-foreground">
                     {review.review}
                   </p>
 
-                  <div className="mt-6 flex items-center justify-between gap-3 text-xs uppercase tracking-[0.18em] text-on-surface-variant">
+                  <div className="mt-6 flex items-center justify-between gap-3 text-xs uppercase tracking-[0.18em] text-muted-foreground">
                     <span className="rounded-full bg-slate-100 px-3 py-2 text-slate-600">
                       {review.highlight}
                     </span>
@@ -187,7 +187,7 @@ export function Testimonials() {
                     : counters[idx].toLocaleString()}
                   {stat.suffix}
                 </p>
-                <p className="mt-2 text-xs uppercase tracking-[0.22em] text-on-surface-variant">
+                <p className="mt-2 text-xs uppercase tracking-[0.22em] text-muted-foreground">
                   {stat.label}
                 </p>
               </div>

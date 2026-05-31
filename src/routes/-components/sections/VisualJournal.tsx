@@ -77,7 +77,7 @@ export function VisualJournal() {
       {/* Header element */}
       <div className="px-6 md:px-20 max-w-7xl mx-auto mb-12 flex justify-between items-end">
         <div className="space-y-1">
-          <span className="text-xs font-semibold uppercase tracking-widest text-soft-sage">
+          <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
             Aesthetic Stream
           </span>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-primary">
@@ -90,7 +90,7 @@ export function VisualJournal() {
           target="_blank"
           referrerPolicy="no-referrer"
           rel="noopener noreferrer"
-          className="font-sans text-xs md:text-sm font-semibold uppercase tracking-widest text-primary border-b border-primary hover:text-soft-sage hover:border-soft-sage transition-all pb-1 flex items-center gap-1.5"
+          className="font-sans text-xs md:text-sm font-semibold uppercase tracking-widest text-primary border-b border-primary hover:text-muted-foreground hover:border-muted-foreground transition-all pb-1 flex items-center gap-1.5"
         >
           Follow Instagram <ArrowRight className="h-4.5 w-4.5" />
         </a>
@@ -111,7 +111,7 @@ export function VisualJournal() {
               viewport={{ once: true, margin: '-20px' }}
               transition={{ duration: 0.5 }}
               onClick={() => setSelectedItem(item)}
-              className="relative aspect-square overflow-hidden rounded-xl bg-surface-container border border-outline-variant/10 group cursor-pointer"
+              className="relative aspect-square overflow-hidden rounded-xl bg-secondary border border-border/10 group cursor-pointer"
             >
               <img
                 src={item.src}
@@ -122,14 +122,14 @@ export function VisualJournal() {
               />
 
               {/* Translucent overlay details on hover */}
-              <div className="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-4 z-10 text-on-primary">
+              <div className="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-4 z-10 text-primary-foreground">
                 {/* Geotag */}
                 <span className="flex items-center gap-1 text-[10px] font-mono uppercase tracking-widest">
-                  <MapPin className="h-3 w-3 text-soft-sage" /> {item.location}
+                  <MapPin className="h-3 w-3 text-muted-foreground" /> {item.location}
                 </span>
 
                 {/* Engagement counts */}
-                <div className="flex justify-between items-center bg-background/95 backdrop-blur px-3 py-2 rounded-lg text-primary shadow-lg border border-outline-variant/10">
+                <div className="flex justify-between items-center bg-background/95 backdrop-blur px-3 py-2 rounded-lg text-primary shadow-lg border border-border/10">
                   <button
                     id={`gallery-like-btn-${item.id}`}
                     onClick={(e) => toggleLike(item.id, e)}
@@ -141,10 +141,10 @@ export function VisualJournal() {
                     <strong>{calculatedLikes}</strong>
                   </button>
                   <span className="flex items-center gap-1 text-xs">
-                    <MessageCircle className="h-4 w-4 text-soft-sage" />
+                    <MessageCircle className="h-4 w-4 text-muted-foreground" />
                     <strong>{(commentsList[item.id] || []).length}</strong>
                   </span>
-                  <ZoomIn className="h-4 w-4 text-soft-sage shrink-0" />
+                  <ZoomIn className="h-4 w-4 text-muted-foreground shrink-0" />
                 </div>
               </div>
             </motion.div>
@@ -171,13 +171,13 @@ export function VisualJournal() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
-                className="relative bg-background max-w-4xl w-full rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row border border-outline-variant/20"
+                className="relative bg-background max-w-4xl w-full rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row border border-border/20"
                 id="lightbox-panel"
               >
                 {/* Close Button button */}
                 <button
                   onClick={() => setSelectedItem(null)}
-                  className="absolute right-4 top-4 p-1.5 rounded-full bg-background/85 text-primary hover:bg-surface-container transition-colors z-20"
+                  className="absolute right-4 top-4 p-1.5 rounded-full bg-background/85 text-primary hover:bg-secondary transition-colors z-20"
                 >
                   <X className="h-5 w-5" />
                 </button>
@@ -212,7 +212,7 @@ export function VisualJournal() {
                         className={`flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider py-1.5 px-3 rounded-full border transition-colors ${
                           likedList[selectedItem.id]
                             ? 'bg-[#ba1a1a]/15 text-[#ba1a1a] border-transparent'
-                            : 'bg-transparent text-on-surface-variant hover:text-primary border-outline'
+                            : 'bg-transparent text-muted-foreground hover:text-primary border-outline'
                         }`}
                       >
                         <Heart
@@ -224,14 +224,14 @@ export function VisualJournal() {
                       </button>
                     </div>
 
-                    <p className="font-sans text-xs text-on-surface-variant italic">
+                    <p className="font-sans text-xs text-muted-foreground italic">
                       "Each photograph captures a direct intersection of
                       sandstone, warmth, and natural linens under natural
                       sunrise panels."
                     </p>
 
                     {/* Total Likes */}
-                    <div className="text-xs text-on-surface border-t border-outline-variant/15 pt-3">
+                    <div className="text-xs text-foreground border-t border-border/15 pt-3">
                       Liked by{' '}
                       <strong>
                         {selectedItem.likes +
@@ -242,7 +242,7 @@ export function VisualJournal() {
 
                     {/* Comments Scrollable List */}
                     <div className="space-y-3 pt-2">
-                      <span className="block text-[10px] uppercase font-mono tracking-wider text-soft-sage">
+                      <span className="block text-[10px] uppercase font-mono tracking-wider text-muted-foreground">
                         Journal Replies (
                         {(commentsList[selectedItem.id] || []).length})
                       </span>
@@ -251,12 +251,12 @@ export function VisualJournal() {
                           (comm, idx) => (
                             <div
                               key={idx}
-                              className="text-xs space-y-0.5 border-b border-outline-variant/5 pb-2"
+                              className="text-xs space-y-0.5 border-b border-border/5 pb-2"
                             >
                               <span className="font-mono font-bold text-primary">
                                 @{comm.user}
                               </span>
-                              <p className="font-sans text-on-surface-variant leading-relaxed">
+                              <p className="font-sans text-muted-foreground leading-relaxed">
                                 {comm.text}
                               </p>
                             </div>
@@ -264,7 +264,7 @@ export function VisualJournal() {
                         )}
                         {(!commentsList[selectedItem.id] ||
                           commentsList[selectedItem.id].length === 0) && (
-                          <p className="text-xs italic text-on-surface-variant/60">
+                          <p className="text-xs italic text-muted-foreground/60">
                             No responses yet. Be the first to reply.
                           </p>
                         )}
