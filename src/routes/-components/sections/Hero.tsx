@@ -10,20 +10,32 @@ export function Hero() {
     {
       title: 'Serene Quarters',
       desc: 'Personal sanctuaries crafted for profound rest.',
-      image:
-        'https://lh3.googleusercontent.com/aida-public/AB6AXuDPrb4x2ksEnDNt4cR7ciKm-iqqEMNbd8b42hnujmBIQfn1oQnWjKsJX9eb3HMcbKxz8ojixaxkZzeN7_rpUWk4DuKxx0JXCZEsDW79FKdG3CJF7BzHczL75KQqGvHSidYFvygVmnFE3ESCuRsJlNmOeZxWY805N_M5Z84NavTfEfJzsOXdSvwJyCC0uabEBFtyxPJUC3-6iMbeYQLTMM-2w20hj5GgpPuDBST7cMdpZYi8h17eYuRw2DQcx7AYzf94Vg28mdBt3y6d',
+      image: '/images/li1.png',
     },
     {
       title: 'Artisan Dining Space',
       desc: 'Where culinary arts meet architectural elegance.',
-      image:
-        'https://lh3.googleusercontent.com/aida-public/AB6AXuCSjahhPK7GGoYfa8TgoFvnDWvE3mFk_XSs6vsn1BFxVxGuZD_9GE3bWj__4Iv6Pm7dzxN7-d8qFKGmxERGPm7HKMJmH9pps9vgi-GbaNorfsYDgerYVFbFTHM19gMfJqFuZnq31p83CUkCcrDTIBsVx8Uw7BhMCSIqIAmrO5h8ITVf-_M5TaXPt1_n2CQmVDTRvew8NRRHlfhItGQmIKZfRNKnGWn7mtXOhlyPyNroSEbZrLn9QIM4KyD2be5k5-LiFj4RCPo9VYbe',
+      image: '/images/li2.png',
     },
     {
       title: 'Tranquil Bedroom Setting',
       desc: 'Serene spaces designed with natural linen accents.',
-      image:
-        'https://lh3.googleusercontent.com/aida-public/AB6AXuC6bPZ5JBuCD53OV8Zfb5Z0qC3FqP9piajiIUnuK5t5lxLmvzm5nLL4NGzbPaZzycoYekwVe8zYF2gsRUN9UvARAsSW2klS3PudUilFCzbQAYEdYOnCQfULHgkOZURJfTYgnUbM8ErdBsmnYAxQfh0fNB6OT1hjTHz1L2MtmmurpKMyGu-9bKVnKfdAKc4sgs5pxAs5Tb7KU_L6N5w_IyRobtK-IUKpvrqT3_rS83sdzgxqfdJ3XkDMNURx10Jva3bSCOWWldHVIrYD',
+      image: '/images/li3.png',
+    },
+    {
+      title: 'Premium Lounge Area',
+      desc: 'Elegant common spaces for relaxation and connection.',
+      image: '/images/si1.png',
+    },
+    {
+      title: 'Modern Workspaces',
+      desc: 'Dedicated areas optimized for focus and productivity.',
+      image: '/images/si2.png',
+    },
+    {
+      title: 'Vibrant Community',
+      desc: 'Shared spaces that foster meaningful interactions.',
+      image: '/images/si3.png',
     },
   ]
 

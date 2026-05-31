@@ -9,8 +9,7 @@ const reviews = [
   {
     name: 'Harsh Raj Upadhyay',
     role: 'Resident, Anand Niketan',
-    image:
-      'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80',
+    image: '',
     review:
       'Best pg for girls in Anand Niketan. It’s provide shuttle service for girls. Very clean rooms and hygienic food.',
     highlight: 'Shuttle service & clean rooms',
@@ -18,16 +17,14 @@ const reviews = [
   {
     name: 'Abhi Mishra',
     role: 'Resident, Anand Niketan',
-    image:
-      'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80',
+    image: '',
     review: 'Environment is friendly & Best PG for Girls.',
     highlight: 'Friendly environment',
   },
   {
     name: 'Neeraj Mishra',
     role: 'Resident, Anand Niketan',
-    image:
-      'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80',
+    image: '',
     review:
       'Best budget friendly with shuttle service pg in this area. Very clean room and hygienic food here.',
     highlight: 'Budget friendly & hygiene',

@@ -10,6 +10,7 @@ import {
 } from 'lucide-react'
 import { LANDMARKS_DATA } from '#/data'
 import type { Landmark } from '#/types'
+import { CONTACT_DETAILS } from '#/constants'
 
 export function ConnectedLiving() {
   const [filterType, setFilterType] = useState<
@@ -74,7 +75,7 @@ export function ConnectedLiving() {
           <div className="inline-flex items-center gap-3 rounded-3xl border border-gray-200 bg-white/80 px-4 py-3 shadow-sm">
             <MapPin className="h-4 w-4 text-primary" />
             <p className="font-sans text-sm text-foreground leading-relaxed">
-              (C – 124, Anand Niketan, South Motibagh), New Delhi - 110021
+              {CONTACT_DETAILS.address}
             </p>
           </div>
 

@@ -8,8 +8,7 @@ export const RESIDENCES_DATA: Residence[] = [
       'Value-oriented shared living with well-appointed beds and communal washroom access.',
     description:
       'A practical four-bed residence designed for flexible occupants who appreciate a comfortable, community-first layout without attached bathrooms.',
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuA-omA2jZNUoz1WjcT4QABww1HKc7OhQDXYPPlZfE6T1SWVTEf-pINU0drymnhuMnUn0hUT4p6-zsdbF0pDxteetHSZL1RoXT85Eo8cH3Su9Fl-JEy6nxSFRB8xVB_Wxz_K0THXJXstaqrQGBbJzH0ZK7t3YovybmLYLEJ0Inh1nUQSXGSsJsb_x075FuzI0b8XfuoWtKF9lU9SXzdjQ1bsseNo81Nf42VTk6NUDwBFIejIcPAiVYAg35NpKuHqFuFKrvc9hbqxzutA',
+    image: '/images/li1.png',
     specs: [
       'Shared bathroom access',
       'Private sleeping nook',
@@ -32,8 +31,7 @@ export const RESIDENCES_DATA: Residence[] = [
       'Triple occupancy comfort with private ensuite access for each bed.',
     description:
       'Three-bed suites offer a premium shared residence experience, with individual attached washrooms and thoughtful privacy details throughout.',
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuAKyTbj7nM_L1a97IGvcRmF1-KUgwQSqQUjDCXR3v5-AAWFvHmsSWt2F7tOt-xZM_uKhKe7R3xOPaLp9us1VTp-ODyBkQuRE2XH385jKtIOxjahPqMIwgpZGyAgqyAEvOi6wrK8t_-QAxxd2urJvqKTjZwtcUYOP5EXkk9XCMqYd1YGbyCNHADUMssgwjRvD1tYJ3-6V4JlhQS4ZVfD3KtUbAdKSO0DgNCw5arAFMHmJgacpV0Aiv1txoxAbrB5ZRTmGeGLdP_HH0-O',
+    image: '/images/li2.png',
     specs: [
       'Individual attached washroom',
       'Shared lounge',
@@ -55,8 +53,7 @@ export const RESIDENCES_DATA: Residence[] = [
     tagline: 'Semi-private duo residence with premium ensuite convenience.',
     description:
       'Two-bed shared suites that pair private sleeping quarters with attached bathrooms, ideal for friends or colleagues seeking quiet comfort.',
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuBSZYDFwDMwJY1Pu5XJFyIv09F2xwRzEob60HcyMoszyffAX1I4RzzymYuPi9M0ejlJV0AbMcWWoIySYxCbihTxxmDkrkZvbJCkIEeOqQootQAVy5Ohqp_H1v4VLpvqpt26he0yI2CC2wysTBlIEVYlVmG2QmvZxsqRwX7aaTJJwDcyTyOcT3sVwf4SuYobrBgSfpptMGouPPNLxJAtCknSJu3RvwLPdmfR0XtTIchO8aGvlnc-OZ2KqrYZpakIPDKJiNSeBTNcULXE',
+    image: '/images/si1.png',
     specs: ['Attached washroom', 'Shared mini lounge', 'Personal storage'],
     features: [
       'Two private sleep alcoves each with ensuite bath',
@@ -75,8 +72,7 @@ export const RESIDENCES_DATA: Residence[] = [
       'Balanced twin sharing with thoughtful layout and shared facilities.',
     description:
       'A cost-effective two-bed residence with shared washroom facilities, designed for clear circulation and comfortable dual occupancy.',
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDPrb4x2ksEnDNt4cR7ciKm-iqqEMNbd8b42hnujmBIQfn1oQnWjKsJX9eb3HMcbKxz8ojixaxkZzeN7_rpUWk4DuKxx0JXCZEsDW79FKdG3CJF7BzHczL75KQqGvHSidYFvygVmnFE3ESCuRsJlNmOeZxWY805N_M5Z84NavTfEfJzsOXdSvwJyCC0uabEBFtyxPJUC3-6iMbeYQLTMM-2w20hj5GgpPuDBST7cMdpZYi8h17eYuRw2DQcx7AYzf94Vg28mdBt3y6d',
+    image: '/images/si2.png',
     specs: ['Shared bathroom access', 'Dual workspace zones', 'Large wardrobe'],
     features: [
       'Two private bed spaces with built-in storage',
@@ -98,7 +94,7 @@ export const AMENITIES_DATA: Amenity[] = [
       'Individual air conditioning in every room for year-round comfort.',
     iconName: 'Flower',
     image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuA-omA2jZNUoz1WjcT4QABww1HKc7OhQDXYPPlZfE6T1SWVTEf-pINU0drymnhuMnUn0hUT4p6-zsdbF0pDxteetHSZL1RoXT85Eo8cH3Su9Fl-JEy6nxSFRB8xVB_Wxz_K0THXJXstaqrQGBbJzH0ZK7t3YovybmLYLEJ0Inh1nUQSXGSsJsb_x075FuzI0b8XfuoWtKF9lU9SXzdjQ1bsseNo81Nf42VTk6NUDwBFIejIcPAiVYAg35NpKuHqFuFKrvc9hbqxzutA',
+      '/images/li1.png',
     detailText:
       'Individual air conditioning in every room for year-round comfort.',
     capacityLimit: 'All rooms equipped',
@@ -111,7 +107,7 @@ export const AMENITIES_DATA: Amenity[] = [
       'Uninterrupted electricity with full generator backup at all times.',
     iconName: 'Coffee',
     image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuC6bPZ5JBuCD53OV8Zfb5Z0qC3FqP9piajiIUnuK5t5lxLmvzm5nLL4NGzbPaZzycoYekwVe8zYF2gsRUN9UvARAsSW2klS3PudUilFCzbQAYEdYOnCQfULHgkOZURJfTYgnUbM8ErdBsmnYAxQfh0fNB6OT1hjTHz1L2MtmmurpKMyGu-9bKVnKfdAKc4sgs5pxAs5Tb7KU_L6N5w_IyRobtK-IUKpvrqT3_rS83sdzgxqfdJ3XkDMNURx10Jva3bSCOWWldHVIrYD',
+      '/images/li2.png',
     detailText:
       'Uninterrupted electricity with full generator backup at all times.',
     capacityLimit: 'Entire property',
@@ -123,7 +119,7 @@ export const AMENITIES_DATA: Amenity[] = [
     description: 'Complimentary drop and pick-up service to college every day.',
     iconName: 'Coffee',
     image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDPrb4x2ksEnDNt4cR7ciKm-iqqEMNbd8b42hnujmBIQfn1oQnWjKsJX9eb3HMcbKxz8ojixaxkZzeN7_rpUWk4DuKxx0JXCZEsDW79FKdG3CJF7BzHczL75KQqGvHSidYFvygVmnFE3ESCuRsJlNmOeZxWY805N_M5Z84NavTfEfJzsOXdSvwJyCC0uabEBFtyxPJUC3-6iMbeYQLTMM-2w20hj5GgpPuDBST7cMdpZYi8h17eYuRw2DQcx7AYzf94Vg28mdBt3y6d',
+      '/images/li3.png',
     detailText: 'Complimentary drop and pick-up service to college every day.',
     capacityLimit: 'All residents',
     operatingHours: 'Daily scheduled service',
@@ -135,7 +131,7 @@ export const AMENITIES_DATA: Amenity[] = [
       '360° surveillance with trained security personnel round the clock.',
     iconName: 'BookOpen',
     image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuA-omA2jZNUoz1WjcT4QABww1HKc7OhQDXYPPlZfE6T1SWVTEf-pINU0drymnhuMnUn0hUT4p6-zsdbF0pDxteetHSZL1RoXT85Eo8cH3Su9Fl-JEy6nxSFRB8xVB_Wxz_K0THXJXstaqrQGBbJzH0ZK7t3YovybmLYLEJ0Inh1nUQSXGSsJsb_x075FuzI0b8XfuoWtKF9lU9SXzdjQ1bsseNo81Nf42VTk6NUDwBFIejIcPAiVYAg35NpKuHqFuFKrvc9hbqxzutA',
+      '/images/si1.png',
     detailText:
       '360° surveillance with trained security personnel round the clock. Enhanced safety features for residents.',
     capacityLimit: 'Full property coverage',
@@ -147,7 +143,7 @@ export const AMENITIES_DATA: Amenity[] = [
     description: "Warm personal attention from our owner — you're family here.",
     iconName: 'Coffee',
     image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDPrb4x2ksEnDNt4cR7ciKm-iqqEMNbd8b42hnujmBIQfn1oQnWjKsJX9eb3HMcbKxz8ojixaxkZzeN7_rpUWk4DuKxx0JXCZEsDW79FKdG3CJF7BzHczL75KQqGvHSidYFvygVmnFE3ESCuRsJlNmOeZxWY805N_M5Z84NavTfEfJzsOXdSvwJyCC0uabEBFtyxPJUC3-6iMbeYQLTMM-2w20hj5GgpPuDBST7cMdpZYi8h17eYuRw2DQcx7AYzf94Vg28mdBt3y6d',
+      '/images/si2.png',
     detailText:
       "Warm personal attention from our owner — you're family here. Personalized support and guidance available.",
     capacityLimit: 'All residents',
@@ -159,7 +155,7 @@ export const AMENITIES_DATA: Amenity[] = [
     description: 'Instant hot water available at all hours, every single day.',
     iconName: 'Flower',
     image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuC6bPZ5JBuCD53OV8Zfb5Z0qC3FqP9piajiIUnuK5t5lxLmvzm5nLL4NGzbPaZzycoYekwVe8zYF2gsRUN9UvARAsSW2klS3PudUilFCzbQAYEdYOnCQfULHgkOZURJfTYgnUbM8ErdBsmnYAxQfh0fNB6OT1hjTHz1L2MtmmurpKMyGu-9bKVnKfdAKc4sgs5pxAs5Tb7KU_L6N5w_IyRobtK-IUKpvrqT3_rS83sdzgxqfdJ3XkDMNURx10Jva3bSCOWWldHVIrYD',
+      '/images/si3.png',
     detailText: 'Instant hot water available at all hours, every single day.',
     capacityLimit: 'All bathrooms',
     operatingHours: '24/7 Available',
@@ -170,7 +166,7 @@ export const AMENITIES_DATA: Amenity[] = [
     description: 'Freshly prepared, hygienic and nutritious meals daily.',
     iconName: 'Utensils',
     image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuCSjahhPK7GGoYfa8TgoFvnDWvE3mFk_XSs6vsn1BFxVxGuZD_9GE3bWj__4Iv6Pm7dzxN7-d8qFKGmxERGPm7HKMJmH9pps9vgi-GbaNorfsYDgerYVFbFTHM19gMfJqFuZnq31p83CUkCcrDTIBsVx8Uw7BhMCSIqIAmrO5h8ITVf-_M5TaXPt1_n2CQmVDTRvew8NRRHlfhItGQmIKZfRNKnGWn7mtXOhlyPyNroSEbZrLn9QIM4KyD2be5k5-LiFj4RCPo9VYbe',
+      '/images/li1.png',
     detailText:
       'Freshly prepared, hygienic and nutritious meals daily prepared with care.',
     capacityLimit: 'All residents',
@@ -183,7 +179,7 @@ export const AMENITIES_DATA: Amenity[] = [
       'Shared laundry facility available to all residents at no extra cost.',
     iconName: 'Coffee',
     image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDPrb4x2ksEnDNt4cR7ciKm-iqqEMNbd8b42hnujmBIQfn1oQnWjKsJX9eb3HMcbKxz8ojixaxkZzeN7_rpUWk4DuKxx0JXCZEsDW79FKdG3CJF7BzHczL75KQqGvHSidYFvygVmnFE3ESCuRsJlNmOeZxWY805N_M5Z84NavTfEfJzsOXdSvwJyCC0uabEBFtyxPJUC3-6iMbeYQLTMM-2w20hj5GgpPuDBST7cMdpZYi8h17eYuRw2DQcx7AYzf94Vg28mdBt3y6d',
+      '/images/li2.png',
     detailText:
       'Shared laundry facility available to all residents at no extra cost.',
     capacityLimit: 'Multiple machines',
@@ -196,7 +192,7 @@ export const AMENITIES_DATA: Amenity[] = [
       'Relax and unwind with premium entertainment in the shared lounge.',
     iconName: 'Coffee',
     image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDPrb4x2ksEnDNt4cR7ciKm-iqqEMNbd8b42hnujmBIQfn1oQnWjKsJX9eb3HMcbKxz8ojixaxkZzeN7_rpUWk4DuKxx0JXCZEsDW79FKdG3CJF7BzHczL75KQqGvHSidYFvygVmnFE3ESCuRsJlNmOeZxWY805N_M5Z84NavTfEfJzsOXdSvwJyCC0uabEBFtyxPJUC3-6iMbeYQLTMM-2w20hj5GgpPuDBST7cMdpZYi8h17eYuRw2DQcx7AYzf94Vg28mdBt3y6d',
+      '/images/li3.png',
     detailText: 'Relax and unwind with premium smart TV in the shared lounge.',
     capacityLimit: 'Common area',
     operatingHours: 'Daily evening hours',
@@ -208,7 +204,7 @@ export const AMENITIES_DATA: Amenity[] = [
       'Convenient transport options available across the NCR region.',
     iconName: 'Coffee',
     image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuA-omA2jZNUoz1WjcT4QABww1HKc7OhQDXYPPlZfE6T1SWVTEf-pINU0drymnhuMnUn0hUT4p6-zsdbF0pDxteetHSZL1RoXT85Eo8cH3Su9Fl-JEy6nxSFRB8xVB_Wxz_K0THXJXstaqrQGBbJzH0ZK7t3YovybmLYLEJ0Inh1nUQSXGSsJsb_x075FuzI0b8XfuoWtKF9lU9SXzdjQ1bsseNo81Nf42VTk6NUDwBFIejIcPAiVYAg35NpKuHqFuFKrvc9hbqxzutA',
+      '/images/si1.png',
     detailText: 'Convenient transport options available across the NCR region.',
     capacityLimit: 'All residents',
     operatingHours: 'On-demand service',
@@ -220,7 +216,7 @@ export const AMENITIES_DATA: Amenity[] = [
       'Peaceful atmosphere designed for focused study and academic growth.',
     iconName: 'BookOpen',
     image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDPrb4x2ksEnDNt4cR7ciKm-iqqEMNbd8b42hnujmBIQfn1oQnWjKsJX9eb3HMcbKxz8ojixaxkZzeN7_rpUWk4DuKxx0JXCZEsDW79FKdG3CJF7BzHczL75KQqGvHSidYFvygVmnFE3ESCuRsJlNmOeZxWY805N_M5Z84NavTfEfJzsOXdSvwJyCC0uabEBFtyxPJUC3-6iMbeYQLTMM-2w20hj5GgpPuDBST7cMdpZYi8h17eYuRw2DQcx7AYzf94Vg28mdBt3y6d',
+      '/images/si2.png',
     detailText:
       'Peaceful atmosphere designed for focused study and academic growth.',
     capacityLimit: 'Multiple study zones',
@@ -289,28 +285,28 @@ export const GALLERY_DATA: GalleryItem[] = [
   {
     id: 'gal-1',
     alt: 'The Grand Lounge Space',
-    src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDPrb4x2ksEnDNt4cR7ciKm-iqqEMNbd8b42hnujmBIQfn1oQnWjKsJX9eb3HMcbKxz8ojixaxkZzeN7_rpUWk4DuKxx0JXCZEsDW79FKdG3CJF7BzHczL75KQqGvHSidYFvygVmnFE3ESCuRsJlNmOeZxWY805N_M5Z84NavTfEfJzsOXdSvwJyCC0uabEBFtyxPJUC3-6iMbeYQLTMM-2w20hj5GgpPuDBST7cMdpZYi8h17eYuRw2DQcx7AYzf94Vg28mdBt3y6d',
+    src: '/images/si3.png',
     location: 'Central Lobby',
     likes: 148,
   },
   {
     id: 'gal-2',
     alt: 'Symmetric Dining Room Interior',
-    src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCSjahhPK7GGoYfa8TgoFvnDWvE3mFk_XSs6vsn1BFxVxGuZD_9GE3bWj__4Iv6Pm7dzxN7-d8qFKGmxERGPm7HKMJmH9pps9vgi-GbaNorfsYDgerYVFbFTHM19gMfJqFuZnq31p83CUkCcrDTIBsVx8Uw7BhMCSIqIAmrO5h8ITVf-_M5TaXPt1_n2CQmVDTRvew8NRRHlfhItGQmIKZfRNKnGWn7mtXOhlyPyNroSEbZrLn9QIM4KyD2be5k5-LiFj4RCPo9VYbe',
+    src: '/images/li1.png',
     location: 'The Common Pavilion',
     likes: 92,
   },
   {
     id: 'gal-3',
     alt: 'The Serene Bedroom Design',
-    src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC6bPZ5JBuCD53OV8Zfb5Z0qC3FqP9piajiIUnuK5t5lxLmvzm5nLL4NGzbPaZzycoYekwVe8zYF2gsRUN9UvARAsSW2klS3PudUilFCzbQAYEdYOnCQfULHgkOZURJfTYgnUbM8ErdBsmnYAxQfh0fNB6OT1hjTHz1L2MtmmurpKMyGu-9bKVnKfdAKc4sgs5pxAs5Tb7KU_L6N5w_IyRobtK-IUKpvrqT3_rS83sdzgxqfdJ3XkDMNURx10Jva3bSCOWWldHVIrYD',
+    src: '/images/li2.png',
     location: 'Signature Suite A',
     likes: 215,
   },
   {
     id: 'gal-4',
     alt: 'The Minimalist Solo Layout',
-    src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA-omA2jZNUoz1WjcT4QABww1HKc7OhQDXYPPlZfE6T1SWVTEf-pINU0drymnhuMnUn0hUT4p6-zsdbF0pDxteetHSZL1RoXT85Eo8cH3Su9Fl-JEy6nxSFRB8xVB_Wxz_K0THXJXstaqrQGBbJzH0ZK7t3YovybmLYLEJ0Inh1nUQSXGSsJsb_x075FuzI0b8XfuoWtKF9lU9SXzdjQ1bsseNo81Nf42VTk6NUDwBFIejIcPAiVYAg35NpKuHqFuFKrvc9hbqxzutA',
+    src: '/images/li3.png',
     location: 'Solo Workspace Alcove',
     likes: 184,
   },

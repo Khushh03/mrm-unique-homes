@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Share2, Instagram, Mail, Phone, MapPin } from 'lucide-react'
+import { CONTACT_DETAILS } from '#/constants'
 
 export function Footer() {
   const [copied, setCopied] = useState(false)
@@ -104,25 +105,33 @@ export function Footer() {
               <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-muted-foreground shrink-0" />
                 <a
-                  href="mailto:concierge@mrmhomes.com"
+                  href={`mailto:${CONTACT_DETAILS.email}`}
                   className="font-sans text-muted-foreground hover:text-primary transition-colors"
                 >
-                  concierge@mrmhomes.com
+                  {CONTACT_DETAILS.email}
                 </a>
               </li>
-              <li className="flex items-center gap-2">
-                <Phone className="h-4 w-4 text-muted-foreground shrink-0" />
-                <a
-                  href="tel:+1234567890"
-                  className="font-sans text-muted-foreground hover:text-primary transition-colors"
-                >
-                  +1 (234) 567-890
-                </a>
+              <li className="flex items-start gap-2">
+                <Phone className="h-4 w-4 text-muted-foreground shrink-0 mt-0.5" />
+                <div className="flex flex-col gap-1">
+                  <a
+                    href={`tel:+91${CONTACT_DETAILS.phone1Raw}`}
+                    className="font-sans text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    {CONTACT_DETAILS.phone1}
+                  </a>
+                  <a
+                    href={`tel:+91${CONTACT_DETAILS.phone2Raw}`}
+                    className="font-sans text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    {CONTACT_DETAILS.phone2}
+                  </a>
+                </div>
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="h-4 w-4 text-muted-foreground shrink-0 mt-0.5" />
                 <p className="font-sans text-muted-foreground leading-relaxed text-xs">
-                  (C – 124, Anand Niketan, South Motibagh), New Delhi - 110021
+                  {CONTACT_DETAILS.address}
                 </p>
               </li>
               <li className="pt-2 flex items-center gap-3 relative">
